@@ -1,0 +1,540 @@
+---
+title: Assessing mode activation using Keldysh
+format: 
+  revealjs:
+    include-after-body: videojs.html
+    fontsize: 15pt
+    fontfamily: libertinus
+    slide-number: true #author: "Jérémy Besson"
+---
+
+
+::: {style="font-size: 150%;"}
+# Comments
+:::
+
+## Comments
+- We assess $|\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n \tau}|$ with a suitable normalisation. If $\mathcal{A}_n^{{\mathscr I}^+}$ is not numerically stable, then we are making (good looking) plots that change for each grid resolution.
+- We need a name for the quantity 
+$$ W_n^{{\mathscr I}^+}(\tau)=\frac{\left\vert\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}\right\vert}{\max_n \left\vert\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n\tau}\right\vert},$$ I suggest: 
+    - Mode dominance function $D_n(\tau)$ (physical)
+    - Mode activation function (physical but quite misleading)
+    - Relative modal weight $W_n(\tau)$ ('weight' is a more neutral expression)
+    - ...
+
+
+::: {style="font-size: 150%;"}
+# Zerilli
+:::
+
+## Zerilli: 'usual' (hyperboloidal) gaussian
+
+![Initial data.](usual_gaussian.svg)
+
+
+## Zerilli: 'usual' (hyperboloidal) gaussian
+grid size $N=500$ simulation 
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="activation_N=500_case=Schwarzschild-Zerilli_ell=2_precision=700_s=2.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+## Zerilli: 'usual' (hyperboloidal) gaussian
+grid size $N=600$ simulation 
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=400$)
+
+![Relative modal weight as a function of time. 12 modes, grid size $N=400$.](N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg)
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=400$)
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=400$.](N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
+
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=500$)
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=500$.](N=500_case=Schwarzschild-Zerilli_ell=2_precision=700_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg)
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=500$)
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=500$.](N=500_case=Schwarzschild-Zerilli_ell=2_precision=700_s=2_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
+
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=600$)
+
+![Relative modal weight as a function of time. 12 modes, grid size $N=600$.](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg)
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=600$)
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=600$.](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
+
+
+
+## Zerilli: Vishu's initial data
+- $u_0=(e^{-4 a g(\sigma)^2},-4a g(\sigma) e^{- 4a g(\sigma)^2})^t$, we can tune $a$ like Vishu did in his paper.
+
+![Initial data $a=0.1$](vishu_a=0.1.svg)
+
+## Zerilli: Vishu's initial data
+- $u_0=(e^{-4 a g(\sigma)^2},-4a g(\sigma) e^{- 4a g(\sigma)^2})^t$, we can tune $a$ like Vishu did in his paper.
+
+![Initial data $a=1$](vishu_a=1.svg)
+
+## Zerilli: Vishu's initial data
+- $u_0=(e^{-4 a g(\sigma)^2},-4a g(\sigma) e^{- 4a g(\sigma)^2})^t$, we can tune $a$ like Vishu did in his paper.
+- We have convergence issues. 
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_Vishu_a=0.1.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+## Zerilli: $\ell=3$
+- A mode sits at $\omega=40i$, its eigenfunction is very similar to the $\ell=2$ AS mode (it cancels at the horizon).
+- Convergence test ? Difficult because the mode sits very high in the complex plane.
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="activation_N=500_case=Schwarzschild-Zerilli_ell=3_precision=700_s=2_narrow_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+
+## Regge-Wheeler
+
+...
+
+
+
+
+
+::: {style="font-size: 150%;"}
+# Kerr
+:::
+
+## Kerr: initial data we use (2D gaussian)
+
+$$u_0=\left(\exp\left({-\frac{(\sigma-\mu)^2+x^2}{2\mu^2}}\right),0\right)^t, \text{ 2D gaussian}$$
+
+<div class="frame-player">
+  <video controls width="90%">
+    <source src="rotating_surface_2D.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+## Kerr: another possible initial data (1D gaussian)
+
+$$u_0=\left(\exp\left({-\frac{(\sigma-\mu)^2}{2\mu^2}}\right),0\right)^t, \text{ 1D gaussian}$$
+
+<div class="frame-player">
+  <video controls width="90%">
+    <source src="rotating_surface_1D.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+## Kerr $a=0.01$, $x=\cos \theta = 1$
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0.01_m=0_x1_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+## Kerr $a=0.01$, $x=\cos \theta \approx 0.71$
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0.01_m=0_x2_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+## Kerr $a=0.01$, $x=\cos \theta = 0$
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0.01_m=0_x3_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+## Kerr $a=0.01$, $x=\cos \theta = 0$
+
+![Relative modal weight as a function of time. 100 modes (the ordering is quite complicated), grid size $N_\sigma=140, N_x=4$.](Kerr_a=0.01_relative_weight_function_2d_gaussian_100_curves_full.svg)
+
+
+## Kerr $a=0.01$, $x=\cos \theta \approx -0.71$
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0.01_m=0_x4_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+## Kerr $a=0.01$, $x=\cos \theta = -1$
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0.01_m=0_x5_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 1$
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x1_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta \approx 0.71$
+
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x2_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+Typo in this animation: $a=0$, not $0.01$
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 0$
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x3_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta \approx -0.71$
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x4_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = -1$
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x5_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 1$ (1D gaussian)
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x1_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta \approx 0.71$ (1D gaussian)
+
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x2_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+Typo in this animation: $a=0$, not $0.01$
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 0$ (1D gaussian)
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x3_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
