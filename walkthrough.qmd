@@ -123,6 +123,26 @@ function step(button, dir) {
 ![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added. Not normalised.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_not_normalised__relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
 
 
+## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
+
+![Second initial data: gaussian No. 2](gaussian_0.2.svg)
+
+
+## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_classic_relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg)
+
+
+## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg)
+
+
+
+## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added. Not normalised.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_not_normalised__relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg)
+
 
 
 
