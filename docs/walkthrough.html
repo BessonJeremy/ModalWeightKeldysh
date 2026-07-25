@@ -141,17 +141,14 @@
 </section>
 
 <section id="comments-1" class="slide level2">
-<h2>Comments</h2>
+<h2>Comments <span style="color: red;">☆</span></h2>
 <ul>
 <li>We assess <span class="math inline">\(|\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n \tau}|\)</span> with a suitable normalisation. If <span class="math inline">\(\mathcal{A}_n^{{\mathscr I}^+}\)</span> is not numerically stable, then we are making (good looking) plots that change for each grid resolution.</li>
-<li>We need a name for the quantity <span class="math display">\[ W_n^{{\mathscr I}^+}(\tau)=\frac{\left\vert\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}\right\vert}{\max_n \left\vert\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n\tau}\right\vert},\]</span> I suggest:
-<ul>
-<li>Mode dominance function <span class="math inline">\(D_n(\tau)\)</span> (physical)</li>
-<li>Mode activation function (physical but quite misleading)</li>
-<li>Relative modal weight <span class="math inline">\(W_n(\tau)\)</span> (‘weight’ is a more neutral expression)</li>
-<li>…</li>
-</ul></li>
+<li>We need call “relative modal weight” the quantity <span class="math display">\[ W_n(\tau)=\frac{\left\vert\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}\right\vert}{\max_n \left\vert\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n\tau}\right\vert},\]</span></li>
 </ul>
+<p>In order to take into account the beating between eigenvalues of opposite real part, it is natural to evaluate <span class="math display">\[\sum_{\substack{\mathrm{Re}(\omega_n)\geq 0 \\ \mathrm{Im}(\omega_n)\geq 0}}\frac{\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n\tau}+c.c.}{2}\]</span></p>
+<p>We will consider <span class="math display">\[ W_n^{c.c.}(\tau)=\frac{\left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert}{\max_n \left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert},\]</span></p>
+<p><span class="math display">\[ W_n^{c.c.,n.r.}(\tau)=\left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert,\]</span></p>
 </section>
 <section id="zerilli" class="title-slide slide level1 center" style="font-size: 150%;">
 <h1>Zerilli</h1>
@@ -219,31 +216,58 @@ function step(button, dir) {
 
 <img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 12 modes, grid size <span class="math inline">\(N=600\)</span>.</p></section>
 <section id="zerilli-usual-hyperboloidal-gaussian-n600-1" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=600\)</span>)</h2>
+<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=600\)</span>) <span style="color: red;">☆</span></h2>
 
-<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=600\)</span>.</p></section>
-<section id="zerilli-vishus-initial-data" class="slide level2">
-<h2>Zerilli: Vishu’s initial data</h2>
+<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_classic_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=600\)</span>. <span style="color: red;">Branch cut eigenvalues added.</span></p></section>
+<section id="zerilli-usual-hyperboloidal-gaussian-n600-2" class="slide level2">
+<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=600\)</span>) <span style="color: red;">☆</span></h2>
+
+<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=600\)</span>. <span style="color: red;">Branch cut eigenvalues added. Beating between opposite real parts added.</span></p></section>
+<section id="zerilli-usual-hyperboloidal-gaussian-n600-3" class="slide level2">
+<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=600\)</span>) <span style="color: red;">☆</span></h2>
+
+<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_not_normalised__relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=600\)</span>. <span style="color: red;">Branch cut eigenvalues added. Beating between opposite real parts added. Not normalised.</span></p></section>
+<section id="zerilli-vishus-initial-data-a0.1" class="slide level2">
+<h2>Zerilli: Vishu’s initial data <span class="math inline">\(a=0.1\)</span></h2>
 <ul>
-<li><span class="math inline">\(u_0=(e^{-4 a g(\sigma)^2},-4a g(\sigma) e^{- 4a g(\sigma)^2})^t\)</span>, we can tune <span class="math inline">\(a\)</span> like Vishu did in his paper.</li>
+<li><span class="math inline">\(u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t\)</span></li>
 </ul>
 
 <img data-src="vishu_a=0.1.svg" class="r-stretch quarto-figure-center"><p class="caption">Initial data <span class="math inline">\(a=0.1\)</span></p></section>
-<section id="zerilli-vishus-initial-data-1" class="slide level2">
-<h2>Zerilli: Vishu’s initial data</h2>
+<section id="zerilli-vishus-initial-data-a0.1-1" class="slide level2">
+<h2>Zerilli: Vishu’s initial data <span class="math inline">\(a=0.1\)</span></h2>
 <ul>
-<li><span class="math inline">\(u_0=(e^{-4 a g(\sigma)^2},-4a g(\sigma) e^{- 4a g(\sigma)^2})^t\)</span>, we can tune <span class="math inline">\(a\)</span> like Vishu did in his paper.</li>
-</ul>
-
-<img data-src="vishu_a=1.svg" class="r-stretch quarto-figure-center"><p class="caption">Initial data <span class="math inline">\(a=1\)</span></p></section>
-<section id="zerilli-vishus-initial-data-2" class="slide level2">
-<h2>Zerilli: Vishu’s initial data</h2>
-<ul>
-<li><span class="math inline">\(u_0=(e^{-4 a g(\sigma)^2},-4a g(\sigma) e^{- 4a g(\sigma)^2})^t\)</span>, we can tune <span class="math inline">\(a\)</span> like Vishu did in his paper.</li>
-<li>We have convergence issues.</li>
+<li><span class="math inline">\(u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t\)</span></li>
 </ul>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_Vishu_a=0.1.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+</section>
+<section id="zerilli-vishus-initial-data-a1" class="slide level2">
+<h2>Zerilli: Vishu’s initial data <span class="math inline">\(a=1\)</span> <span style="color: red;">☆</span></h2>
+<ul>
+<li><span class="math inline">\(u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t\)</span></li>
+</ul>
+
+<img data-src="vishu_a=1.svg" class="r-stretch quarto-figure-center"><p class="caption">Initial data <span class="math inline">\(a=1\)</span></p></section>
+<section id="zerilli-vishus-initial-data-a1-1" class="slide level2">
+<h2>Zerilli: Vishu’s initial data <span class="math inline">\(a=1\)</span> <span style="color: red;">☆</span></h2>
+<ul>
+<li><span class="math inline">\(u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t\)</span></li>
+</ul>
+<div class="frame-player">
+<p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_vishu_a=1.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
