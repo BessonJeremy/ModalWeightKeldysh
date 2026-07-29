@@ -225,11 +225,11 @@ function step(button, dir) {
 
 ## Figures: RN-Zerilli $Q=0.1$ squared peaks log
 
-![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks_log.svg)
+![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks_log_.svg)
 
 ## Figures: RN-Zerilli $Q=0.1$ enveloping (not sure yellow is the most visible color(?))
 
-![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log.svg)
+![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_.svg)
 
 
 
