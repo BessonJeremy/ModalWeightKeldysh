@@ -147,18 +147,18 @@ function step(button, dir) {
 
 ![Beating SdS](Lambda=0.07_M=1_N=400_case=SdS_ell=2_precision=500_s=2_cc_log_many.svg)
 
-## Figures: Reissner-Nordström ($Q=0.01$)
+## Figures: Reissner-Nordström (Regge-Wheeler, $Q=0.01$)
 
 ![RN](M=1_N=500_Q=0.01_case=RN_ell=2_precision=700_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_17_curves_full__.svg)
 
 
 
-## Figures: RN-Zerilli
+## Figures: RN-Zerilli $Q=0.01$
 
 ![RN-Zerilli](eigenvalues_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_RN_RWZ.svg)
 
 
-## Figures: RN-Zerilli
+## Figures: RN-Zerilli $Q=0.01$
 
 <div class="frame-player">
   <video controls width="100%">
@@ -179,19 +179,58 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
+## Figures: RN-Zerilli $Q=0.01$ squared peaks
 
-## Figures: RN-Zerilli enveloping
+![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc.svg)
+
+## Figures: RN-Zerilli $Q=0.01$ squared peaks log
+
+![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc_log.svg)
+
+
+## Figures: RN-Zerilli $Q=0.01$ enveloping
 
 ![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping.svg)
 
 
-## Figures: RN-Zerilli squared peaks
 
-![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc.svg)
 
-## Figures: RN-Zerilli squared peaks log
 
-![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc_log.svg)
+
+## Figures: RN-Zerilli $Q=0.1$
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="activation_M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_usual_gaussian_and_foreground.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
+## Figures: RN-Zerilli $Q=0.1$ squared peaks (with new color scheme)
+
+![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks.svg)
+
+## Figures: RN-Zerilli $Q=0.1$ squared peaks log
+
+![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks_log.svg)
+
+## Figures: RN-Zerilli $Q=0.1$ enveloping
+
+![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log.svg)
+
 
 
 
