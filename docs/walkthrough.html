@@ -248,6 +248,65 @@ function step(button, dir) {
 <h2>Figures: Reissner-Nordström (<span class="math inline">\(Q=0.01\)</span>)</h2>
 
 <img data-src="M=1_N=500_Q=0.01_case=RN_ell=2_precision=700_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_17_curves_full__.svg" class="r-stretch quarto-figure-center"><p class="caption">RN</p></section>
+<section id="figures-rn-zerilli" class="slide level2">
+<h2>Figures: RN-Zerilli</h2>
+
+<img data-src="eigenvalues_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_RN_RWZ.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
+<section id="figures-rn-zerilli-1" class="slide level2">
+<h2>Figures: RN-Zerilli</h2>
+<div class="frame-player">
+<p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_usual_gaussian_and_foreground.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+</section>
+<section id="figures-rn-zerilli-enveloping" class="slide level2">
+<h2>Figures: RN-Zerilli enveloping</h2>
+
+<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
+<section id="figures-rn-zerilli-squared-peaks" class="slide level2">
+<h2>Figures: RN-Zerilli squared peaks</h2>
+
+<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
+<section id="figures-rn-zerilli-squared-peaks-log" class="slide level2">
+<h2>Figures: RN-Zerilli squared peaks log</h2>
+
+<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc_log.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
+<section id="figures-sds-zerilli" class="slide level2">
+<h2>Figures: SdS-Zerilli</h2>
+<p>Typo title</p>
+<div class="frame-player">
+<p><video controls="" width="100%"> <source src="activation_Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_usual_gaussian_cc_and_foreground.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+</section>
+<section id="figures-sds-zerilli-squared-peaks" class="slide level2">
+<h2>Figures: SdS-Zerilli squared peaks</h2>
+
+<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_cc_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
+<section id="figures-sds-zerilli-enveloping" class="slide level2">
+<h2>Figures: SdS-Zerilli enveloping</h2>
+
+<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_cc_nr_log_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
 <section id="comments" class="title-slide slide level1 center" style="font-size: 150%;">
 <h1>Comments</h1>
 
