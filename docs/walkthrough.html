@@ -32,6 +32,7 @@
     }
   </style>
   <link rel="stylesheet" href="walkthrough_files/libs/revealjs/dist/theme/quarto-01f13797c5d49e6a6e3afd83e9ec273a.css">
+  <link rel="stylesheet" href="style.css">
   <link href="walkthrough_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="walkthrough_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="walkthrough_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -134,16 +135,36 @@
 <div class="quarto-title-authors">
 </div>
 
+</section><section id="TOC">
+<nav role="doc-toc"> 
+<h2 id="toc-title">Table of contents</h2>
+<ul>
+<li><a href="#/schwarzschild" id="/toc-schwarzschild">Schwarzschild</a></li>
+<li><a href="#/reissner-nordström" id="/toc-reissner-nordström">Reissner-Nordström</a></li>
+<li><a href="#/schwarzschild-de-sitter" id="/toc-schwarzschild-de-sitter">Schwarzschild-de Sitter</a></li>
+<li><a href="#/kerr" id="/toc-kerr">Kerr</a></li>
+</ul>
+</nav>
 </section>
-<section id="figures-article" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Figures article</h1>
+<section id="comments-and-notations" class="slide level2 center-content">
+<h2>Comments and notations</h2>
+<ul>
+<li><p>We define <span class="math display">\[ u(\tau,x) \sim
+\sum_n \color{red}{{\cal A}_n(x) \;e^{i\omega_{n}\tau} } \quad ,  \quad {\cal A}_n(x) \equiv \langle\alpha_n, u_0\rangle v_n(x),\]</span> and <span class="math display">\[{\cal A}_n(\tau,x) \equiv \color{red}{{\cal A}_n(x) \;e^{i\omega_{n}\tau} }. \]</span></p></li>
+<li><p>We call “relative modal weight” the quantity <span class="math display">\[ W_n^\infty(\tau)=\frac{\left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}{\max_n \left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}\quad,\quad \color{blue}{{\cal A}_n^\infty(\tau)} \equiv {\cal A}_n(\tau,x)\vert_{x=x_{\mathscr I^+}} \]</span></p></li>
+<li><p>It is also insightful to consider the beating between eigenvalues of opposite real part (i.e.&nbsp;<span class="math inline">\(\omega_n\)</span> and <span class="math inline">\(-\bar \omega_n\)</span>) with <span class="math display">\[\left\vert\frac{\color{blue}{{\cal A}_n^\infty(\tau)}+c.c.}{2}\right\vert\quad \text{ instead of }\quad \left\vert\color{blue}{{\cal A}_n^\infty(\tau)}\right\vert\]</span></p></li>
+<li><p>We now illustrate the Algebraically Special (AS) ‘stagnation’ in the 4 cases of study. Some of the axis labels and colorbar titles are incorrect. Please refer to the title of the slide instead.</p></li>
+</ul>
+</section>
+<section id="schwarzschild" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Schwarzschild</h1>
 
 </section>
 
-<section id="figures-zerilli-foreground-activation" class="slide level2">
-<h2>Figures: Zerilli (foreground activation)</h2>
+<section id="schwarzschild-zerilli-animation-as-stagnation" class="slide level2">
+<h2>Schwarzschild-Zerilli animation (‘AS stagnation’)</h2>
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_usual_gaussian_and_foreground.mp4" type="video/mp4"> </video></p>
+<p><video controls="" width="80%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_inset_version.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
@@ -157,8 +178,42 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="figures-zerilli-foreground-activation-beating-with-complex-conjugate" class="slide level2">
-<h2>Figures: Zerilli (foreground activation, beating with complex conjugate)</h2>
+<section id="schwarzschild-regge-wheeler-animation-no-as-stagnation" class="slide level2">
+<h2>Schwarzschild-Regge-Wheeler animation (no ‘AS stagnation’)</h2>
+<div class="frame-player">
+<p><video controls="" width="80%"> <source src="activation_N=600_case=Schwarzschild_ell=2_precision=800_s=2_inset_version.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+<!--
+## Comments [☆]{style="color: red;"}
+- We assess $|\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n \tau}|$ with a suitable normalisation. If $\mathcal{A}_n^{{\mathscr I}^+}$ is not numerically stable, then we are making (good looking) plots that change for each grid resolution.
+- We need call "relative modal weight" the quantity 
+$$ W_n(\tau)=\frac{\left\vert\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}\right\vert}{\max_n \left\vert\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n\tau}\right\vert},$$ 
+
+
+In order to take into account the beating between eigenvalues of opposite real part, it is natural to evaluate
+$$\sum_{\substack{\mathrm{Re}(\omega_n)\geq 0 \\ \mathrm{Im}(\omega_n)\geq 0}}\frac{\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n\tau}+c.c.}{2}$$
+
+
+We will consider
+$$ W_n^{c.c.}(\tau)=\frac{\left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert}{\max_n \left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert},$$ 
+
+$$ W_n^{c.c.,n.r.}(\tau)=\left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert,$$ 
+
+-->
+</section>
+<section id="schwarzschild-zerilli-animation-beating-with-complex-conjugate" class="slide level2">
+<h2>Schwarzschild-Zerilli animation (beating with complex conjugate)</h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_usual_gaussian_cc_and_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -173,26 +228,10 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
+<p>Resolution grid: <span class="math inline">\(N=600\)</span></p>
 </section>
-<section id="figures-rw-foreground-activation" class="slide level2">
-<h2>Figures: RW (foreground activation)</h2>
-<div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_N=500_case=Schwarzschild_ell=2_precision=700_s=2_RW_foreground.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
-</div>
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-</section>
-<section id="figures-rw-foreground-activation-beating-with-complex-conjugate" class="slide level2">
-<h2>Figures: RW (foreground activation, beating with complex conjugate)</h2>
+<section id="schwarzschild-regge-wheeler-animation-beating-with-complex-conjugate" class="slide level2">
+<h2>Schwarzschild-Regge-Wheeler animation (beating with complex conjugate)</h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_N=500_case=Schwarzschild_ell=2_precision=700_s=2_RW_cc_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -207,53 +246,52 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
+<p>Resolution grid: <span class="math inline">\(N=500\)</span></p>
 </section>
-<section id="figures-zerilli-enveloping-see-the-dashed-vertical-lines" class="slide level2">
-<h2>Figures: Zerilli enveloping (see the dashed vertical lines)</h2>
-
-<img data-src="N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_enveloping.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping Zerilli</p></section>
-<section id="figures-zerilli-beating-hard-to-read" class="slide level2">
-<h2>Figures: Zerilli beating (hard to read)</h2>
+<section id="zerilli-w_ninftytau-with-beating-c.c." class="slide level2">
+<h2>Zerilli: <span class="math inline">\(W_n^\infty(\tau)\)</span> with beating (c.c.)</h2>
 
 <img data-src="N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_cc.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating Zerilli</p></section>
-<section id="figures-zerilli-beating-log-makes-it-easy-to-read" class="slide level2">
-<h2>Figures: Zerilli beating (<span class="math inline">\(\log\)</span> makes it easy to read)</h2>
-
-<img data-src="N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_cc_log.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating Zerilli (logscale)</p></section>
-<section id="figures-rw-enveloping" class="slide level2">
-<h2>Figures: RW enveloping</h2>
-
-<img data-src="N=500_case=Schwarzschild_ell=2_precision=700_s=2_enveloping.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping RW</p></section>
-<section id="figures-rw-beating" class="slide level2">
-<h2>Figures: RW beating</h2>
+<section id="regge-wheeler-w_ninftytau-with-beating-c.c." class="slide level2">
+<h2>Regge-Wheeler: <span class="math inline">\(W_n^\infty(\tau)\)</span> with beating (c.c.)</h2>
 
 <img data-src="N=500_case=Schwarzschild_ell=2_precision=700_s=2_cc.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating RW</p></section>
-<section id="figures-zerilli-beating" class="slide level2">
-<h2>Figures: Zerilli beating</h2>
+<section id="zerilli-log_mathrm10w_ninftytau-with-beating-c.c." class="slide level2">
+<h2>Zerilli: <span class="math inline">\(\log_\mathrm{10}W_n^\infty(\tau)\)</span> with beating (c.c.)</h2>
+
+<img data-src="N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_cc_log.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating Zerilli (logscale)</p></section>
+<section id="regge-wheeler-log_mathrm10w_ninftytau-with-beating-c.c." class="slide level2">
+<h2>Regge-Wheeler: <span class="math inline">\(\log_\mathrm{10}W_n^\infty(\tau)\)</span> with beating (c.c.)</h2>
 
 <img data-src="N=500_case=Schwarzschild_ell=2_precision=700_s=2_cc_log.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating RW (logscale)</p></section>
-<section id="figures-sds-enveloping" class="slide level2">
-<h2>Figures: SdS enveloping</h2>
+<section id="zerilli-log_mathrm10vertmathcala_ninftytauvert-with-beating-c.c." class="slide level2">
+<h2>Zerilli: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span> with beating (c.c.)</h2>
 
-<img data-src="Lambda=0.07_M=1_N=400_case=SdS_ell=2_precision=500_s=2_enveloping.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping SdS</p></section>
-<section id="figures-sds-beating" class="slide level2">
-<h2>Figures: SdS beating</h2>
+<img data-src="N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_enveloping.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping Zerilli</p></section>
+<section id="regge-wheeler-log_mathrm10vertmathcala_ninftytauvert-with-beating-c.c." class="slide level2">
+<h2>Regge-Wheeler: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span> with beating (c.c.)</h2>
 
-<img data-src="Lambda=0.07_M=1_N=400_case=SdS_ell=2_precision=500_s=2_cc_many.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating SdS</p></section>
-<section id="figures-sds-beating-1" class="slide level2">
-<h2>Figures: SdS beating</h2>
+<img data-src="N=500_case=Schwarzschild_ell=2_precision=700_s=2_enveloping.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping RW</p></section>
+<section id="reissner-nordström" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Reissner-Nordström</h1>
 
-<img data-src="Lambda=0.07_M=1_N=400_case=SdS_ell=2_precision=500_s=2_cc_log_many.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating SdS</p></section>
-<section id="figures-reissner-nordström-regge-wheeler-q0.01" class="slide level2">
-<h2>Figures: Reissner-Nordström (Regge-Wheeler, <span class="math inline">\(Q=0.01\)</span>)</h2>
+</section>
 
-<img data-src="M=1_N=500_Q=0.01_case=RN_ell=2_precision=700_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_17_curves_full__.svg" class="r-stretch quarto-figure-center"><p class="caption">RN</p></section>
-<section id="figures-rn-zerilli-q0.01" class="slide level2">
-<h2>Figures: RN-Zerilli <span class="math inline">\(Q=0.01\)</span></h2>
+<section id="isospectrality.-spectra-for-chandrasekhars-v_2-and-v_2--with-qm0.01" class="slide level2">
+<h2>Isospectrality. Spectra for Chandrasekhar’s <span class="math inline">\(V_2^+\)</span> and <span class="math inline">\(V_2^-\)</span> with <span class="math inline">\(Q/M=0.01\)</span></h2>
 
-<img data-src="eigenvalues_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_RN_RWZ.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
-<section id="figures-rn-zerilli-q0.01-1" class="slide level2">
-<h2>Figures: RN-Zerilli <span class="math inline">\(Q=0.01\)</span></h2>
+<!-- ## Figures: SdS enveloping
+![Enveloping SdS](Lambda=0.07_M=1_N=400_case=SdS_ell=2_precision=500_s=2_enveloping.svg)
+
+## Figures: SdS beating
+![Beating SdS](Lambda=0.07_M=1_N=400_case=SdS_ell=2_precision=500_s=2_cc_many.svg) 
+
+## Figures: SdS beating
+![Beating SdS](Lambda=0.07_M=1_N=400_case=SdS_ell=2_precision=500_s=2_cc_log_many.svg)
+-->
+<img data-src="eigenvalues_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_RN_RWZ.svg" class="r-stretch quarto-figure-center"><p class="caption">Spectra for the RN-Zerilli-like case (with <span class="math inline">\(N=400\)</span>) and the RN-RW-like case (with <span class="math inline">\(N=500\)</span>). <span class="math inline">\(Q/M=0.01\)</span> here; Note: If the grid resolutions (<span class="math inline">\(N=400\)</span> and <span class="math inline">\(N=500\)</span>) were the same, the branch cut eigenvalues would also coincide.</p></section>
+<section id="rn-zerilli-like-qm0.01-animation-as-stagnation" class="slide level2">
+<h2>RN-Zerilli-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_usual_gaussian_and_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -269,20 +307,8 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="figures-rn-zerilli-q0.01-squared-peaks" class="slide level2">
-<h2>Figures: RN-Zerilli <span class="math inline">\(Q=0.01\)</span> squared peaks</h2>
-
-<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
-<section id="figures-rn-zerilli-q0.01-squared-peaks-log" class="slide level2">
-<h2>Figures: RN-Zerilli <span class="math inline">\(Q=0.01\)</span> squared peaks log</h2>
-
-<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc_log.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
-<section id="figures-rn-zerilli-q0.01-enveloping" class="slide level2">
-<h2>Figures: RN-Zerilli <span class="math inline">\(Q=0.01\)</span> enveloping</h2>
-
-<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
-<section id="figures-rn-zerilli-q0.1" class="slide level2">
-<h2>Figures: RN-Zerilli <span class="math inline">\(Q=0.1\)</span></h2>
+<section id="rn-zerilli-like-qm0.1-animation-as-stagnation" class="slide level2">
+<h2>RN-Zerilli-like <span class="math inline">\(Q/M=0.1\)</span> animation (‘AS stagnation’)</h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_usual_gaussian_and_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -297,22 +323,48 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
+<!-- Now we have a QNM instead of a purely imaginary eigenvalue.  -->
 </section>
-<section id="figures-rn-zerilli-q0.1-squared-peaks-with-new-color-scheme" class="slide level2">
-<h2>Figures: RN-Zerilli <span class="math inline">\(Q=0.1\)</span> squared peaks (with new color scheme)</h2>
+<section id="rn-zerilli-like-w_ninftytau-with-qm0.1" class="slide level2">
+<h2>RN-Zerilli-like <span class="math inline">\(W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
 
 <img data-src="M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q=0.1, \ell=2\)</span></p></section>
-<section id="figures-rn-zerilli-q0.1-squared-peaks-log" class="slide level2">
-<h2>Figures: RN-Zerilli <span class="math inline">\(Q=0.1\)</span> squared peaks log</h2>
+<section id="rn-zerilli-like-log_mathrm10w_ninftytau-with-qm0.1" class="slide level2">
+<h2>RN-Zerilli-like <span class="math inline">\(\log_\mathrm{10}W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
 
 <img data-src="M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks_log_.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q=0.1, \ell=2\)</span></p></section>
-<section id="figures-rn-zerilli-q0.1-enveloping-not-sure-yellow-is-the-most-visible-color" class="slide level2">
-<h2>Figures: RN-Zerilli <span class="math inline">\(Q=0.1\)</span> enveloping (not sure yellow is the most visible color(?))</h2>
+<section id="rn-zerilli-like-log_mathrm10vertmathcala_ninftytauvert-with-qm0.1" class="slide level2">
+<h2>RN-Zerilli-like <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
 
+<!-- 
+
+## RN-RW-like: $W_n^\infty(\tau)$ with beating (c.c.)
+
+![RN](M=1_N=500_Q=0.01_case=RN_ell=2_precision=700_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_17_curves_full__.svg)
+
+
+## Figures: RN-Zerilli $Q=0.01$ squared peaks
+
+![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc.svg)
+
+## Figures: RN-Zerilli $Q=0.01$ squared peaks log
+
+![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc_log.svg)
+
+
+## Figures: RN-Zerilli $Q=0.01$ enveloping
+
+![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping.svg)
+ -->
 <img data-src="M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q=0.1, \ell=2\)</span></p></section>
-<section id="figures-sds-zerilli" class="slide level2">
-<h2>Figures: SdS-Zerilli</h2>
-<p>Typo title</p>
+<section id="schwarzschild-de-sitter" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Schwarzschild-de Sitter</h1>
+
+</section>
+
+<section id="sds-zerilli-like-lambda-m20.07-animation-no-as-stagnation" class="slide level2">
+<h2>SdS-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span> animation (no ‘AS stagnation’)</h2>
+<p>Typo in the title inside the animation</p>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_usual_gaussian_cc_and_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -328,45 +380,95 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="figures-sds-zerilli-squared-peaks" class="slide level2">
-<h2>Figures: SdS-Zerilli squared peaks</h2>
+<section id="sds-zerilli-like-lambda-m20.07-w_ninftytau" class="slide level2">
+<h2>SdS-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(W_n^\infty(\tau)\)</span></h2>
 
-<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_cc_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
-<section id="figures-sds-zerilli-enveloping" class="slide level2">
-<h2>Figures: SdS-Zerilli enveloping</h2>
+<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_cc_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(\Lambda=0.07\)</span>, <span class="math inline">\(N=400\)</span></p></section>
+<section id="sds-zerilli-like-lambda-m20.07-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
+<h2>SdS-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
 
-<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_cc_nr_log_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli</p></section>
-<section id="comments" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Comments</h1>
+<!-- ## Zerilli: 'usual' (hyperboloidal) gaussian
 
-</section>
+![Initial data.](usual_gaussian.svg) 
 
-<section id="comments-1" class="slide level2">
-<h2>Comments <span style="color: red;">☆</span></h2>
-<ul>
-<li>We assess <span class="math inline">\(|\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n \tau}|\)</span> with a suitable normalisation. If <span class="math inline">\(\mathcal{A}_n^{{\mathscr I}^+}\)</span> is not numerically stable, then we are making (good looking) plots that change for each grid resolution.</li>
-<li>We need call “relative modal weight” the quantity <span class="math display">\[ W_n(\tau)=\frac{\left\vert\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}\right\vert}{\max_n \left\vert\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n\tau}\right\vert},\]</span></li>
-</ul>
-<p>In order to take into account the beating between eigenvalues of opposite real part, it is natural to evaluate <span class="math display">\[\sum_{\substack{\mathrm{Re}(\omega_n)\geq 0 \\ \mathrm{Im}(\omega_n)\geq 0}}\frac{\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n\tau}+c.c.}{2}\]</span></p>
-<p>We will consider <span class="math display">\[ W_n^{c.c.}(\tau)=\frac{\left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert}{\max_n \left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert},\]</span></p>
-<p><span class="math display">\[ W_n^{c.c.,n.r.}(\tau)=\left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert,\]</span></p>
-</section>
-<section id="zerilli" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Zerilli</h1>
 
-</section>
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=400$)
 
-<section id="zerilli-usual-hyperboloidal-gaussian" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian</h2>
+![Relative modal weight as a function of time. 12 modes, grid size $N=400$.](N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg)
 
-<img data-src="usual_gaussian.svg" class="r-stretch quarto-figure-center"><p class="caption">Initial data.</p></section>
-<section id="zerilli-usual-hyperboloidal-gaussian-1" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian</h2>
-<p>grid size <span class="math inline">\(N=500\)</span> simulation</p>
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=400$)
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=400$.](N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
+
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=500$)
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=500$.](N=500_case=Schwarzschild-Zerilli_ell=2_precision=700_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg)
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=500$)
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=500$.](N=500_case=Schwarzschild-Zerilli_ell=2_precision=700_s=2_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
+
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=600$)
+
+![Relative modal weight as a function of time. 12 modes, grid size $N=600$.](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg)
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=600$) [☆]{style="color: red;"} 
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added.]{style="color: red;"} ](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_classic_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
+
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=600$) [☆]{style="color: red;"} 
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
+
+
+## Zerilli: 'usual' (hyperboloidal) gaussian ($N=600$) [☆]{style="color: red;"} 
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added. Not normalised.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_not_normalised__relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
+
+
+## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
+
+![Second initial data: gaussian No. 2](gaussian_0.2.svg)
+
+
+## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_classic_relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg)
+
+
+## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg)
+
+
+
+## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
+
+![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added. Not normalised.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_not_normalised__relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg)
+
+
+
+
+## Zerilli: Vishu's initial data $a=0.1$
+- $u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t$
+
+![Initial data $a=0.1$](vishu_a=0.1.svg)
+
+## Zerilli: Vishu's initial data $a=0.1$
+- $u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t$
+
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_N=500_case=Schwarzschild-Zerilli_ell=2_precision=700_s=2.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_Vishu_a=0.1.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -377,14 +479,24 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-</section>
-<section id="zerilli-usual-hyperboloidal-gaussian-2" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian</h2>
-<p>grid size <span class="math inline">\(N=600\)</span> simulation</p>
+
+## Zerilli: Vishu's initial data $a=1$ [☆]{style="color: red;"} 
+- $u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t$
+
+![Initial data $a=1$](vishu_a=1.svg)
+
+## Zerilli: Vishu's initial data $a=1$ [☆]{style="color: red;"} 
+- $u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t$
+
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_vishu_a=1.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -395,71 +507,22 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-</section>
-<section id="zerilli-usual-hyperboloidal-gaussian-n400" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=400\)</span>)</h2>
 
-<img data-src="N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 12 modes, grid size <span class="math inline">\(N=400\)</span>.</p></section>
-<section id="zerilli-usual-hyperboloidal-gaussian-n400-1" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=400\)</span>)</h2>
 
-<img data-src="N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=400\)</span>.</p></section>
-<section id="zerilli-usual-hyperboloidal-gaussian-n500" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=500\)</span>)</h2>
 
-<img data-src="N=500_case=Schwarzschild-Zerilli_ell=2_precision=700_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=500\)</span>.</p></section>
-<section id="zerilli-usual-hyperboloidal-gaussian-n500-1" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=500\)</span>)</h2>
+## Zerilli: $\ell=3$
+- A mode sits at $\omega=40i$, its eigenfunction is very similar to the $\ell=2$ AS mode (it cancels at the horizon).
+- Convergence test ? Difficult because the mode sits very high in the complex plane.
 
-<img data-src="N=500_case=Schwarzschild-Zerilli_ell=2_precision=700_s=2_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=500\)</span>.</p></section>
-<section id="zerilli-usual-hyperboloidal-gaussian-n600" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=600\)</span>)</h2>
-
-<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 12 modes, grid size <span class="math inline">\(N=600\)</span>.</p></section>
-<section id="zerilli-usual-hyperboloidal-gaussian-n600-1" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=600\)</span>) <span style="color: red;">☆</span></h2>
-
-<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_classic_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=600\)</span>. <span style="color: red;">Branch cut eigenvalues added.</span></p></section>
-<section id="zerilli-usual-hyperboloidal-gaussian-n600-2" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=600\)</span>) <span style="color: red;">☆</span></h2>
-
-<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=600\)</span>. <span style="color: red;">Branch cut eigenvalues added. Beating between opposite real parts added.</span></p></section>
-<section id="zerilli-usual-hyperboloidal-gaussian-n600-3" class="slide level2">
-<h2>Zerilli: ‘usual’ (hyperboloidal) gaussian (<span class="math inline">\(N=600\)</span>) <span style="color: red;">☆</span></h2>
-
-<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_not_normalised__relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=600\)</span>. <span style="color: red;">Branch cut eigenvalues added. Beating between opposite real parts added. Not normalised.</span></p></section>
-<section id="zerilli-gaussian-no.-2" class="slide level2">
-<h2>Zerilli: gaussian No.&nbsp;2 <span style="color: red;">☆</span></h2>
-
-<img data-src="gaussian_0.2.svg" class="r-stretch quarto-figure-center"><p class="caption">Second initial data: gaussian No.&nbsp;2</p></section>
-<section id="zerilli-gaussian-no.-2-1" class="slide level2">
-<h2>Zerilli: gaussian No.&nbsp;2 <span style="color: red;">☆</span></h2>
-
-<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_classic_relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=600\)</span>. <span style="color: red;">Branch cut eigenvalues added.</span></p></section>
-<section id="zerilli-gaussian-no.-2-2" class="slide level2">
-<h2>Zerilli: gaussian No.&nbsp;2 <span style="color: red;">☆</span></h2>
-
-<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=600\)</span>. <span style="color: red;">Branch cut eigenvalues added. Beating between opposite real parts added.</span></p></section>
-<section id="zerilli-gaussian-no.-2-3" class="slide level2">
-<h2>Zerilli: gaussian No.&nbsp;2 <span style="color: red;">☆</span></h2>
-
-<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_not_normalised__relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 15 modes, grid size <span class="math inline">\(N=600\)</span>. <span style="color: red;">Branch cut eigenvalues added. Beating between opposite real parts added. Not normalised.</span></p></section>
-<section id="zerilli-vishus-initial-data-a0.1" class="slide level2">
-<h2>Zerilli: Vishu’s initial data <span class="math inline">\(a=0.1\)</span></h2>
-<ul>
-<li><span class="math inline">\(u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t\)</span></li>
-</ul>
-
-<img data-src="vishu_a=0.1.svg" class="r-stretch quarto-figure-center"><p class="caption">Initial data <span class="math inline">\(a=0.1\)</span></p></section>
-<section id="zerilli-vishus-initial-data-a0.1-1" class="slide level2">
-<h2>Zerilli: Vishu’s initial data <span class="math inline">\(a=0.1\)</span></h2>
-<ul>
-<li><span class="math inline">\(u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t\)</span></li>
-</ul>
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_Vishu_a=0.1.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="activation_N=500_case=Schwarzschild-Zerilli_ell=3_precision=700_s=2_narrow_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -470,66 +533,21 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-</section>
-<section id="zerilli-vishus-initial-data-a1" class="slide level2">
-<h2>Zerilli: Vishu’s initial data <span class="math inline">\(a=1\)</span> <span style="color: red;">☆</span></h2>
-<ul>
-<li><span class="math inline">\(u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t\)</span></li>
-</ul>
 
-<img data-src="vishu_a=1.svg" class="r-stretch quarto-figure-center"><p class="caption">Initial data <span class="math inline">\(a=1\)</span></p></section>
-<section id="zerilli-vishus-initial-data-a1-1" class="slide level2">
-<h2>Zerilli: Vishu’s initial data <span class="math inline">\(a=1\)</span> <span style="color: red;">☆</span></h2>
-<ul>
-<li><span class="math inline">\(u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t\)</span></li>
-</ul>
-<div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_vishu_a=1.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
-</div>
-<script>
-const fps = 30;
 
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-</section>
-<section id="zerilli-ell3" class="slide level2">
-<h2>Zerilli: <span class="math inline">\(\ell=3\)</span></h2>
-<ul>
-<li>A mode sits at <span class="math inline">\(\omega=40i\)</span>, its eigenfunction is very similar to the <span class="math inline">\(\ell=2\)</span> AS mode (it cancels at the horizon).</li>
-<li>Convergence test ? Difficult because the mode sits very high in the complex plane.</li>
-</ul>
-<div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_N=500_case=Schwarzschild-Zerilli_ell=3_precision=700_s=2_narrow_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
-</div>
-<script>
-const fps = 30;
 
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-</section>
-<section id="regge-wheeler" class="slide level2">
-<h2>Regge-Wheeler</h2>
-<p>…</p>
-</section>
+## Regge-Wheeler
+
+...
+-->
+<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_cc_nr_log_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(\Lambda=0.07\)</span>, <span class="math inline">\(N=400\)</span></p></section>
 <section id="kerr" class="title-slide slide level1 center" style="font-size: 150%;">
 <h1>Kerr</h1>
 
 </section>
 
-<section id="kerr-initial-data-we-use-2d-gaussian" class="slide level2">
-<h2>Kerr: initial data we use (2D gaussian)</h2>
+<section id="kerr-initial-data-2d-gaussian" class="slide level2">
+<h2>Kerr: initial data (2D gaussian)</h2>
 <p><span class="math display">\[u_0=\left(\exp\left({-\frac{(\sigma-\mu)^2+x^2}{2\mu^2}}\right),0\right)^t, \text{ 2D gaussian}\]</span></p>
 <div class="frame-player">
 <p><video controls="" width="90%"> <source src="rotating_surface_2D.mp4" type="video/mp4"> </video></p>
@@ -546,11 +564,11 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="kerr-another-possible-initial-data-1d-gaussian" class="slide level2">
-<h2>Kerr: another possible initial data (1D gaussian)</h2>
-<p><span class="math display">\[u_0=\left(\exp\left({-\frac{(\sigma-\mu)^2}{2\mu^2}}\right),0\right)^t, \text{ 1D gaussian}\]</span></p>
+<section id="kerr-s-2-am0.01-m0-and-costheta0" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=-2\)</span> (<span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
+<p>Presence of an ‘AS stagnation’ in the <span class="math inline">\(s=-2\)</span> case.</p>
 <div class="frame-player">
-<p><video controls="" width="90%"> <source src="rotating_surface_1D.mp4" type="video/mp4"> </video></p>
+<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_centered_x_2d_gaussian_s=-2.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
@@ -564,8 +582,49 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="kerr-a0.01-xcos-theta-1" class="slide level2">
-<h2>Kerr <span class="math inline">\(a=0.01\)</span>, <span class="math inline">\(x=\cos \theta = 1\)</span></h2>
+<section id="kerr-s2-am0.01-m0-and-costheta0" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=+2\)</span> (<span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
+<p>Absence of an ‘AS stagnation’ in the <span class="math inline">\(s=+2\)</span> case.</p>
+<div class="frame-player">
+<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_centered_x_2d_gaussian_s=+2.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+<!-- ## Kerr: another possible initial data (1D gaussian)
+
+$$u_0=\left(\exp\left({-\frac{(\sigma-\mu)^2}{2\mu^2}}\right),0\right)^t, \text{ 1D gaussian}$$
+
+<div class="frame-player">
+  <video controls width="90%">
+    <source src="rotating_surface_1D.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script> -->
+</section>
+<section id="varying-theta-kerr-xcos-theta-1" class="slide level2">
+<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta =1\)</span></h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_x1_2d_gaussian.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -580,9 +639,10 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
+<p>We have fixed the parameters <span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and we change <span class="math inline">\(\theta\)</span></p>
 </section>
-<section id="kerr-a0.01-xcos-theta-approx-0.71" class="slide level2">
-<h2>Kerr <span class="math inline">\(a=0.01\)</span>, <span class="math inline">\(x=\cos \theta \approx 0.71\)</span></h2>
+<section id="varying-theta-kerr-xcos-theta-approx-0.71" class="slide level2">
+<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta \approx 0.71\)</span></h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_x2_2d_gaussian.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -597,9 +657,10 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
+<p>We have fixed the parameters <span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and we change <span class="math inline">\(\theta\)</span></p>
 </section>
-<section id="kerr-a0.01-xcos-theta-0" class="slide level2">
-<h2>Kerr <span class="math inline">\(a=0.01\)</span>, <span class="math inline">\(x=\cos \theta = 0\)</span></h2>
+<section id="varying-theta-kerr-xcos-theta-0" class="slide level2">
+<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta = 0\)</span></h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_x3_2d_gaussian.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -614,13 +675,14 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
+<p>We have fixed the parameters <span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and we change <span class="math inline">\(\theta\)</span></p>
 </section>
-<section id="kerr-a0.01-xcos-theta-0-1" class="slide level2">
-<h2>Kerr <span class="math inline">\(a=0.01\)</span>, <span class="math inline">\(x=\cos \theta = 0\)</span></h2>
+<section id="varying-theta-kerr-xcos-theta-0-1" class="slide level2">
+<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta = 0\)</span></h2>
 
 <img data-src="Kerr_a=0.01_relative_weight_function_2d_gaussian_100_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 100 modes (the ordering is quite complicated), grid size <span class="math inline">\(N_\sigma=140, N_x=4\)</span>.</p></section>
-<section id="kerr-a0.01-xcos-theta-approx--0.71" class="slide level2">
-<h2>Kerr <span class="math inline">\(a=0.01\)</span>, <span class="math inline">\(x=\cos \theta \approx -0.71\)</span></h2>
+<section id="varying-theta-kerr-xcos-theta-approx--0.71" class="slide level2">
+<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta \approx -0.71\)</span></h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_x4_2d_gaussian.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -635,9 +697,10 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
+<p>We have fixed the parameters <span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and we change <span class="math inline">\(\theta\)</span></p>
 </section>
-<section id="kerr-a0.01-xcos-theta--1" class="slide level2">
-<h2>Kerr <span class="math inline">\(a=0.01\)</span>, <span class="math inline">\(x=\cos \theta = -1\)</span></h2>
+<section id="varying-theta-kerr-xcos-theta--1" class="slide level2">
+<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta = -1\)</span></h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_x5_2d_gaussian.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -652,13 +715,19 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-</section>
-<section id="kerr-schwarzschilds-a0-limit-xcos-theta-1" class="slide level2">
-<h2>Kerr: Schwarzschild’s <span class="math inline">\(a=0\)</span> limit, <span class="math inline">\(x=\cos \theta = 1\)</span></h2>
+<p>We have fixed the parameters <span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and we change <span class="math inline">\(\theta\)</span></p>
+<!-- 
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 1$
+
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0_m=0_x1_2d_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x1_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -669,13 +738,21 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-</section>
-<section id="kerr-schwarzschilds-a0-limit-xcos-theta-approx-0.71" class="slide level2">
-<h2>Kerr: Schwarzschild’s <span class="math inline">\(a=0\)</span> limit, <span class="math inline">\(x=\cos \theta \approx 0.71\)</span></h2>
+
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta \approx 0.71$
+
+
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0_m=0_x2_2d_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x2_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -686,14 +763,21 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-<p>Typo in this animation: <span class="math inline">\(a=0\)</span>, not <span class="math inline">\(0.01\)</span></p>
-</section>
-<section id="kerr-schwarzschilds-a0-limit-xcos-theta-0" class="slide level2">
-<h2>Kerr: Schwarzschild’s <span class="math inline">\(a=0\)</span> limit, <span class="math inline">\(x=\cos \theta = 0\)</span></h2>
+
+Typo in this animation: $a=0$, not $0.01$
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 0$
+
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0_m=0_x3_2d_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x3_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -704,13 +788,19 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-</section>
-<section id="kerr-schwarzschilds-a0-limit-xcos-theta-approx--0.71" class="slide level2">
-<h2>Kerr: Schwarzschild’s <span class="math inline">\(a=0\)</span> limit, <span class="math inline">\(x=\cos \theta \approx -0.71\)</span></h2>
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta \approx -0.71$
+
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0_m=0_x4_2d_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x4_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -721,13 +811,19 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-</section>
-<section id="kerr-schwarzschilds-a0-limit-xcos-theta--1" class="slide level2">
-<h2>Kerr: Schwarzschild’s <span class="math inline">\(a=0\)</span> limit, <span class="math inline">\(x=\cos \theta = -1\)</span></h2>
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = -1$
+
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0_m=0_x5_2d_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x5_2d_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -738,13 +834,20 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-</section>
-<section id="kerr-schwarzschilds-a0-limit-xcos-theta-1-1d-gaussian" class="slide level2">
-<h2>Kerr: Schwarzschild’s <span class="math inline">\(a=0\)</span> limit, <span class="math inline">\(x=\cos \theta = 1\)</span> (1D gaussian)</h2>
+
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 1$ (1D gaussian)
+
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0_m=0_x1_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x1_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -755,13 +858,21 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-</section>
-<section id="kerr-schwarzschilds-a0-limit-xcos-theta-approx-0.71-1d-gaussian" class="slide level2">
-<h2>Kerr: Schwarzschild’s <span class="math inline">\(a=0\)</span> limit, <span class="math inline">\(x=\cos \theta \approx 0.71\)</span> (1D gaussian)</h2>
+
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta \approx 0.71$ (1D gaussian)
+
+
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0_m=0_x2_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x2_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -772,14 +883,21 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-<p>Typo in this animation: <span class="math inline">\(a=0\)</span>, not <span class="math inline">\(0.01\)</span></p>
-</section>
-<section id="kerr-schwarzschilds-a0-limit-xcos-theta-0-1d-gaussian" class="slide level2">
-<h2>Kerr: Schwarzschild’s <span class="math inline">\(a=0\)</span> limit, <span class="math inline">\(x=\cos \theta = 0\)</span> (1D gaussian)</h2>
+
+Typo in this animation: $a=0$, not $0.01$
+
+
+## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 0$ (1D gaussian)
+
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0_m=0_x3_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0_m=0_x3_gaussian.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
 </div>
+
 <script>
 const fps = 30;
 
@@ -789,7 +907,7 @@ function step(button, dir) {
     video.pause();
     video.currentTime += dir / fps;
 }
-</script>
+</script> -->
 
 </section>
     </div>
