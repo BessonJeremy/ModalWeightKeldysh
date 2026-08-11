@@ -28,6 +28,8 @@ $$\left\vert\frac{\color{blue}{{\cal A}_n^\infty(\tau)}+c.c.}{2}\right\vert\quad
 
 - We now illustrate the Algebraically Special (AS) 'stagnation' in the 4 cases of study. Some of the axis labels and colorbar titles are incorrect. Please refer to the title of the slide instead.
 
+- [You may need to refresh the page for the figure or animation to display.]{style="color: red;"}
+
 ::: {style="font-size: 150%;"}
 # Schwarzschild
 :::
@@ -532,6 +534,30 @@ function step(button, dir) {
 }
 </script>
 
+## Kerr $s=-2$ ($a/M=\color{red}{0.1}$, $m=0$ and $\cos\theta=0$)
+
+Presence of an ‘AS stagnation’ in the $s=-2$ case.
+
+<div class="frame-player">
+  <video controls width="100%">
+    <source src="test_Kerr_activation_modes_a=0.1_m=0_centered_x_2d_gaussian_s=-2.mp4" type="video/mp4">
+  </video>
+
+  <button onclick="step(this,-1)">back ◀</button>
+  <button onclick="step(this,1)">forward ▶</button>
+</div>
+
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+
 
 ## Kerr $s=+2$ ($a/M=0.01$, $m=0$ and $\cos\theta=0$)
 
@@ -556,6 +582,8 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
+
+
 
 <!-- ## Kerr: another possible initial data (1D gaussian)
 
