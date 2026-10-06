@@ -139,26 +139,26 @@
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#/schwarzschild" id="/toc-schwarzschild">Schwarzschild</a></li>
-<li><a href="#/reissner-nordström" id="/toc-reissner-nordström">Reissner-Nordström</a></li>
-<li><a href="#/schwarzschild-de-sitter" id="/toc-schwarzschild-de-sitter">Schwarzschild-de Sitter</a></li>
-<li><a href="#/kerr" id="/toc-kerr">Kerr</a></li>
+<li><a href="#/schwarzschild-case" id="/toc-schwarzschild-case">Schwarzschild case</a></li>
+<li><a href="#/reissner-nordström-case" id="/toc-reissner-nordström-case">Reissner-Nordström case</a></li>
+<li><a href="#/schwarzschild-de-sitter-case" id="/toc-schwarzschild-de-sitter-case">Schwarzschild-de Sitter case</a></li>
+<li><a href="#/kerr-case" id="/toc-kerr-case">Kerr case</a></li>
 </ul>
 </nav>
 </section>
 <section id="comments-and-notations" class="slide level2 center-content">
 <h2>Comments and notations</h2>
 <ul>
-<li><p>We define <span class="math display">\[ u(\tau,x) \sim
+<li><p>We define, following section 3 in the main text <span class="math display">\[ u(\tau,x) \sim
 \sum_n \color{red}{{\cal A}_n(x) \;e^{i\omega_{n}\tau} } \quad ,  \quad {\cal A}_n(x) \equiv \langle\alpha_n, u_0\rangle v_n(x),\]</span> and <span class="math display">\[{\cal A}_n(\tau,x) \equiv \color{red}{{\cal A}_n(x) \;e^{i\omega_{n}\tau} }. \]</span></p></li>
-<li><p>We call “relative modal weight” the quantity <span class="math display">\[ W_n^\infty(\tau)=\frac{\left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}{\max_n \left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}\quad,\quad \color{blue}{{\cal A}_n^\infty(\tau)} \equiv {\cal A}_n(\tau,x)\vert_{x=x_{\mathscr I^+}} \]</span></p></li>
-<li><p>It is also insightful to consider the beating between eigenvalues of opposite real part (i.e.&nbsp;<span class="math inline">\(\omega_n\)</span> and <span class="math inline">\(-\bar \omega_n\)</span>) with <span class="math display">\[\left\vert\frac{\color{blue}{{\cal A}_n^\infty(\tau)}+c.c.}{2}\right\vert\quad \text{ instead of }\quad \left\vert\color{blue}{{\cal A}_n^\infty(\tau)}\right\vert\]</span></p></li>
-<li><p>We now illustrate the Algebraically Special (AS) ‘stagnation’ in the 4 cases of study. Some of the axis labels and colorbar titles are incorrect. Please refer to the title of the slide instead.</p></li>
-<li><p><span style="color: red;">You may need to refresh the page for the figure or animation to display.</span></p></li>
+<li><p>We call “relative modal weight” the quantity <span class="math display">\[ W_n^\infty(\tau)=\frac{\left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}{\max_n \left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}\quad,\quad \color{blue}{{\cal A}_n^\infty(\tau)} \equiv {\cal A}_n(\tau,x_{\mathscr I^+}) \]</span> <!--$$ W_n^\infty(\tau)=\frac{\left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}{\max_n \left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}\quad,\quad \color{blue}{{\cal A}_n^\infty(\tau)} \equiv {\cal A}_n(\tau,x)\vert_{x=x_{\mathscr I^+}} - [You may need to refresh the page for the figure or animation to display.]{style="color: red;"}
+$$ --></p></li>
+<li><p>We start by illustrating in the following pages the Algebraically Special (AS) ‘stagnation’ in the four cases of study.</p></li>
+<li><p>The material presented here is available in the repository <a href="https://github.com/BessonJeremy/ModalWeightKeldysh/tree/main/docs" data-preview-link=""> https://github.com/BessonJeremy/ModalWeightKeldysh/tree/main/docs</a></p></li>
 </ul>
 </section>
-<section id="schwarzschild" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Schwarzschild</h1>
+<section id="schwarzschild-case" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Schwarzschild case</h1>
 
 </section>
 
@@ -213,10 +213,10 @@ $$ W_n^{c.c.,n.r.}(\tau)=\left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\ome
 
 -->
 </section>
-<section id="schwarzschild-zerilli-animation-beating-with-complex-conjugate" class="slide level2">
-<h2>Schwarzschild-Zerilli animation (beating with complex conjugate)</h2>
+<section id="schwarzschild-zerilli-animation" class="slide level2">
+<h2>Schwarzschild-Zerilli animation</h2>
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_usual_gaussian_cc_and_foreground.mp4" type="video/mp4"> </video></p>
+<p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_usual_gaussian_and_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
@@ -231,10 +231,10 @@ function step(button, dir) {
 </script>
 <p>Resolution grid: <span class="math inline">\(N=600\)</span></p>
 </section>
-<section id="schwarzschild-regge-wheeler-animation-beating-with-complex-conjugate" class="slide level2">
-<h2>Schwarzschild-Regge-Wheeler animation (beating with complex conjugate)</h2>
+<section id="schwarzschild-regge-wheeler-animation" class="slide level2">
+<h2>Schwarzschild-Regge-Wheeler animation</h2>
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_N=500_case=Schwarzschild_ell=2_precision=700_s=2_RW_cc_foreground.mp4" type="video/mp4"> </video></p>
+<p><video controls="" width="100%"> <source src="activation_N=500_case=Schwarzschild_ell=2_precision=700_s=2_RW_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
@@ -249,32 +249,24 @@ function step(button, dir) {
 </script>
 <p>Resolution grid: <span class="math inline">\(N=500\)</span></p>
 </section>
-<section id="zerilli-w_ninftytau-with-beating-c.c." class="slide level2">
-<h2>Zerilli: <span class="math inline">\(W_n^\infty(\tau)\)</span> with beating (c.c.)</h2>
+<section id="zerilli-w_ninftytau" class="slide level2">
+<h2>Zerilli: <span class="math inline">\(W_n^\infty(\tau)\)</span></h2>
 
-<img data-src="N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_cc.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating Zerilli</p></section>
-<section id="regge-wheeler-w_ninftytau-with-beating-c.c." class="slide level2">
-<h2>Regge-Wheeler: <span class="math inline">\(W_n^\infty(\tau)\)</span> with beating (c.c.)</h2>
+<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption"><span class="math inline">\(W_n^\infty(\tau)\)</span> in the Zerilli case</p></section>
+<section id="regge-wheeler-w_ninftytau" class="slide level2">
+<h2>Regge-Wheeler: <span class="math inline">\(W_n^\infty(\tau)\)</span></h2>
 
-<img data-src="N=500_case=Schwarzschild_ell=2_precision=700_s=2_cc.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating RW</p></section>
-<section id="zerilli-log_mathrm10w_ninftytau-with-beating-c.c." class="slide level2">
-<h2>Zerilli: <span class="math inline">\(\log_\mathrm{10}W_n^\infty(\tau)\)</span> with beating (c.c.)</h2>
+<img data-src="N=600_case=Schwarzschild_ell=2_precision=800_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption"><span class="math inline">\(W_n^\infty(\tau)\)</span> in the RW case</p></section>
+<section id="zerilli-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
+<h2>Zerilli: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
 
-<img data-src="N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_cc_log.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating Zerilli (logscale)</p></section>
-<section id="regge-wheeler-log_mathrm10w_ninftytau-with-beating-c.c." class="slide level2">
-<h2>Regge-Wheeler: <span class="math inline">\(\log_\mathrm{10}W_n^\infty(\tau)\)</span> with beating (c.c.)</h2>
+<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping in the Zerilli case</p></section>
+<section id="regge-wheeler-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
+<h2>Regge-Wheeler: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
 
-<img data-src="N=500_case=Schwarzschild_ell=2_precision=700_s=2_cc_log.svg" class="r-stretch quarto-figure-center"><p class="caption">Beating RW (logscale)</p></section>
-<section id="zerilli-log_mathrm10vertmathcala_ninftytauvert-with-beating-c.c." class="slide level2">
-<h2>Zerilli: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span> with beating (c.c.)</h2>
-
-<img data-src="N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_enveloping.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping Zerilli</p></section>
-<section id="regge-wheeler-log_mathrm10vertmathcala_ninftytauvert-with-beating-c.c." class="slide level2">
-<h2>Regge-Wheeler: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span> with beating (c.c.)</h2>
-
-<img data-src="N=500_case=Schwarzschild_ell=2_precision=700_s=2_enveloping.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping RW</p></section>
-<section id="reissner-nordström" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Reissner-Nordström</h1>
+<img data-src="N=600_case=Schwarzschild_ell=2_precision=800_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping in the RW case</p></section>
+<section id="reissner-nordström-case" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Reissner-Nordström case</h1>
 
 </section>
 
@@ -358,8 +350,8 @@ function step(button, dir) {
 ![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping.svg)
  -->
 <img data-src="M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q=0.1, \ell=2\)</span></p></section>
-<section id="schwarzschild-de-sitter" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Schwarzschild-de Sitter</h1>
+<section id="schwarzschild-de-sitter-case" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Schwarzschild-de Sitter case</h1>
 
 </section>
 
@@ -542,8 +534,8 @@ function step(button, dir) {
 ...
 -->
 <img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_cc_nr_log_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(\Lambda=0.07\)</span>, <span class="math inline">\(N=400\)</span></p></section>
-<section id="kerr" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Kerr</h1>
+<section id="kerr-case" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Kerr case</h1>
 
 </section>
 
@@ -588,6 +580,24 @@ function step(button, dir) {
 <p>Presence of an ‘AS stagnation’ in the <span class="math inline">\(s=-2\)</span> case.</p>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.1_m=0_centered_x_2d_gaussian_s=-2.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+</section>
+<section id="kerr-s-2-amcolorred0.5-m0-and-costheta0" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=-2\)</span> (<span class="math inline">\(a/M=\color{red}{0.5}\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
+<p>Absence of an ‘AS stagnation’ when <span class="math inline">\(a\)</span> is too large.</p>
+<div class="frame-player">
+<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.5_m=0_centered_x_2d_gaussian_s=-2.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
