@@ -270,23 +270,16 @@ function step(button, dir) {
 
 </section>
 
-<section id="isospectrality.-spectra-for-chandrasekhars-v_2-and-v_2--with-qm0.01" class="slide level2">
-<h2>Isospectrality. Spectra for Chandrasekhar’s <span class="math inline">\(V_2^+\)</span> and <span class="math inline">\(V_2^-\)</span> with <span class="math inline">\(Q/M=0.01\)</span></h2>
+<!-- 
+## Isospectrality. Spectra for Chandrasekhar's $V_2^+$ and $V_2^-$ with $Q/M=0.01$
 
-<!-- ## Figures: SdS enveloping
-![Enveloping SdS](Lambda=0.07_M=1_N=400_case=SdS_ell=2_precision=500_s=2_enveloping.svg)
+![Spectra for the RN-Zerilli-like case (with $N=400$) and the RN-RW-like case (with $N=500$). $Q/M=0.01$ here; Note: If the grid resolutions ($N=400$ and $N=500$) were the same, the branch cut eigenvalues would also coincide.](eigenvalues_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_RN_RWZ.svg)
 
-## Figures: SdS beating
-![Beating SdS](Lambda=0.07_M=1_N=400_case=SdS_ell=2_precision=500_s=2_cc_many.svg) 
-
-## Figures: SdS beating
-![Beating SdS](Lambda=0.07_M=1_N=400_case=SdS_ell=2_precision=500_s=2_cc_log_many.svg)
 -->
-<img data-src="eigenvalues_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_RN_RWZ.svg" class="r-stretch quarto-figure-center"><p class="caption">Spectra for the RN-Zerilli-like case (with <span class="math inline">\(N=400\)</span>) and the RN-RW-like case (with <span class="math inline">\(N=500\)</span>). <span class="math inline">\(Q/M=0.01\)</span> here; Note: If the grid resolutions (<span class="math inline">\(N=400\)</span> and <span class="math inline">\(N=500\)</span>) were the same, the branch cut eigenvalues would also coincide.</p></section>
 <section id="rn-zerilli-like-qm0.01-animation-as-stagnation" class="slide level2">
 <h2>RN-Zerilli-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_usual_gaussian_and_foreground.mp4" type="video/mp4"> </video></p>
+<p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
@@ -300,6 +293,39 @@ function step(button, dir) {
 }
 </script>
 </section>
+<section id="rn-rw-like-qm0.01-animation-no-as-stagnation" class="slide level2">
+<h2>RN-RW-like <span class="math inline">\(Q/M=0.01\)</span> animation (no ‘AS stagnation’)</h2>
+<div class="frame-player">
+<p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.01_case=RN-RW_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+</section>
+<section id="rn-zerilli-like-qm0.01-animation-as-stagnation-1" class="slide level2">
+<h2>RN-Zerilli-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
+
+<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q/M=0.01, \ell=2\)</span></p></section>
+<section id="rn-rw-like-qm0.01-animation-as-stagnation" class="slide level2">
+<h2>RN-RW-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
+
+<img data-src="M=1_N=400_Q=0.01_case=RN-RW_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-RW <span class="math inline">\(Q/M=0.01, \ell=2\)</span></p></section>
+<section id="rn-zerilli-like-qm0.01-animation-as-stagnation-2" class="slide level2">
+<h2>RN-Zerilli-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
+
+<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q/M=0.01, \ell=2\)</span></p></section>
+<section id="rn-rw-like-qm0.01-animation-no-as-stagnation-1" class="slide level2">
+<h2>RN-RW-like <span class="math inline">\(Q/M=0.01\)</span> animation (no ‘AS stagnation’)</h2>
+
+<img data-src="M=1_N=400_Q=0.01_case=RN-RW_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-RW <span class="math inline">\(Q/M=0.01, \ell=2\)</span></p></section>
 <section id="rn-zerilli-like-qm0.1-animation-as-stagnation" class="slide level2">
 <h2>RN-Zerilli-like <span class="math inline">\(Q/M=0.1\)</span> animation (‘AS stagnation’)</h2>
 <div class="frame-player">
@@ -316,20 +342,65 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-<!-- Now we have a QNM instead of a purely imaginary eigenvalue.  -->
 </section>
 <section id="rn-zerilli-like-w_ninftytau-with-qm0.1" class="slide level2">
 <h2>RN-Zerilli-like <span class="math inline">\(W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
 
 <img data-src="M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q=0.1, \ell=2\)</span></p></section>
-<section id="rn-zerilli-like-log_mathrm10w_ninftytau-with-qm0.1" class="slide level2">
-<h2>RN-Zerilli-like <span class="math inline">\(\log_\mathrm{10}W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
+<section id="rn-zerilli-like-qmsqrt74-animation-as-stagnation" class="slide level2">
+<h2>RN-Zerilli-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (‘AS stagnation’)</h2>
+<div class="frame-player">
+<p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.6614378277661477_case=RN-Zerilli_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
 
-<img data-src="M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks_log_.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q=0.1, \ell=2\)</span></p></section>
-<section id="rn-zerilli-like-log_mathrm10vertmathcala_ninftytauvert-with-qm0.1" class="slide level2">
-<h2>RN-Zerilli-like <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+</section>
+<section id="rn-rw-like-qmsqrt74-animation-no-as-stagnation" class="slide level2">
+<h2>RN-RW-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (no ‘AS stagnation’)</h2>
+<div class="frame-player">
+<p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.6614378277661477_case=RN-RW_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
+
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+<!-- Now we have a QNM instead of a purely imaginary eigenvalue.  -->
+</section>
+<section id="rn-zerilli-like-qmsqrt74-animation-as-stagnation-1" class="slide level2">
+<h2>RN-Zerilli-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (‘AS stagnation’)</h2>
+
+<img data-src="M=1_N=400_Q=0.6614378277661477_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q/M=\sqrt{7}/4, \ell=2\)</span></p></section>
+<section id="rn-rw-like-qmsqrt74-animation-no-as-stagnation-1" class="slide level2">
+<h2>RN-RW-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (no ‘AS stagnation’)</h2>
 
 <!-- 
+
+## RN-Zerilli-like $\log_\mathrm{10}W_n^\infty(\tau)$ with $Q/M=0.1$
+
+![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks_log_.svg)
+
+## RN-Zerilli-like $\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert$ with $Q/M=0.1$
+
+![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_.svg)
+
+
+
 
 ## RN-RW-like: $W_n^\infty(\tau)$ with beating (c.c.)
 
@@ -349,7 +420,7 @@ function step(button, dir) {
 
 ![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping.svg)
  -->
-<img data-src="M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q=0.1, \ell=2\)</span></p></section>
+<img data-src="M=1_N=400_Q=0.6614378277661477_case=RN-RW_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-RW <span class="math inline">\(Q/M=\sqrt{7}/4, \ell=2\)</span></p></section>
 <section id="schwarzschild-de-sitter-case" class="title-slide slide level1 center" style="font-size: 150%;">
 <h1>Schwarzschild-de Sitter case</h1>
 
@@ -357,9 +428,8 @@ function step(button, dir) {
 
 <section id="sds-zerilli-like-lambda-m20.07-animation-no-as-stagnation" class="slide level2">
 <h2>SdS-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span> animation (no ‘AS stagnation’)</h2>
-<p>Typo in the title inside the animation</p>
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_usual_gaussian_cc_and_foreground.mp4" type="video/mp4"> </video></p>
+<p><video controls="" width="100%"> <source src="activation_Lambda=0.07_M=1_N=400_case=SdS-RW-CORRECTED_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
@@ -373,10 +443,27 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="sds-zerilli-like-lambda-m20.07-w_ninftytau" class="slide level2">
-<h2>SdS-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(W_n^\infty(\tau)\)</span></h2>
+<section id="sds-zerilli-like-lambda-m20.07-animation-no-as-stagnation-1" class="slide level2">
+<h2>SdS-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span> animation (no ‘AS stagnation’)</h2>
+<div class="frame-player">
+<p><video controls="" width="100%"> <source src="activation_Lambda=0.07_M=1_N=400_case=SdS-Zerilli-CORRECTED_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
 
-<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_cc_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(\Lambda=0.07\)</span>, <span class="math inline">\(N=400\)</span></p></section>
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+</section>
+<section id="sds-rw-like-lambda-m20.07-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
+<h2>SdS-RW-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
+
+<img data-src="Lambda=0.07_M=1_N=400_case=SdS-RW-CORRECTED_ell=2_precision=500_s=2_enveloping_log_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(\Lambda=0.07\)</span>, <span class="math inline">\(N=400\)</span></p></section>
 <section id="sds-zerilli-like-lambda-m20.07-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
 <h2>SdS-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
 
@@ -533,7 +620,7 @@ function step(button, dir) {
 
 ...
 -->
-<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli_ell=2_precision=500_s=2_cc_nr_log_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(\Lambda=0.07\)</span>, <span class="math inline">\(N=400\)</span></p></section>
+<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli-CORRECTED_ell=2_precision=500_s=2_enveloping_log_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(\Lambda=0.07\)</span>, <span class="math inline">\(N=400\)</span></p></section>
 <section id="kerr-case" class="title-slide slide level1 center" style="font-size: 150%;">
 <h1>Kerr case</h1>
 
