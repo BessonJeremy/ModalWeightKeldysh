@@ -9,7 +9,8 @@
 <link href="walkthrough_files/libs/quarto-html/quarto-syntax-highlighting-15634bcf2e68342d4ad2dfa704d543f6.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.9.38">
 
-  <title>Assessing mode activation using Keldysh</title>
+  <meta name="author" content="J. Besson1,2,3 and JL. Jaramillo1">
+  <title>Vishveshwara’s waveform revisited: insights from a Keldysh quasinormal mode expansion</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -130,35 +131,73 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Assessing mode activation using Keldysh</h1>
+  <h1 class="title">Vishveshwara’s waveform revisited: insights from a Keldysh quasinormal mode expansion</h1>
+  <p class="subtitle"><strong>Supplementary material</strong></p>
 
 <div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+J. Besson<sup>1,2,3</sup> and JL. Jaramillo<sup>1</sup> 
+</div>
+        <p class="quarto-title-affiliation">
+            </p><p><sup>1</sup> Institut de Mathématiques de Bourgogne UMR 5584, Université Bourgogne Europe, CNRS, F-21000 Dijon, France<br>
+            <sup>2</sup> Albert-Einstein-Institut, Max-Planck-Institut für Gravitationsphysik, Callinstraße 38, 30167 Hannover, Germany<br>
+            <sup>3</sup> Leibniz Universität Hannover, 30167 Hannover, Germany<br>
+            </p>
+          <p></p>
+    </div>
 </div>
 
 </section><section id="TOC">
 <nav role="doc-toc"> 
 <h2 id="toc-title">Table of contents</h2>
 <ul>
-<li><a href="#/schwarzschild-case" id="/toc-schwarzschild-case">Schwarzschild case</a></li>
-<li><a href="#/reissner-nordström-case" id="/toc-reissner-nordström-case">Reissner-Nordström case</a></li>
-<li><a href="#/schwarzschild-de-sitter-case" id="/toc-schwarzschild-de-sitter-case">Schwarzschild-de Sitter case</a></li>
-<li><a href="#/kerr-case" id="/toc-kerr-case">Kerr case</a></li>
+<li><a href="#/description-of-the-elements-presented-in-the-supplementary-material" id="/toc-description-of-the-elements-presented-in-the-supplementary-material">Description of the elements presented in the Supplementary material</a></li>
+<li><a href="#/schwarzschild-black-hole-case" id="/toc-schwarzschild-black-hole-case">Schwarzschild black hole case</a></li>
+<li><a href="#/reissner-nordström-black-hole-case" id="/toc-reissner-nordström-black-hole-case">Reissner-Nordström black hole case</a></li>
+<li><a href="#/schwarzschild-de-sitter-black-hole-case" id="/toc-schwarzschild-de-sitter-black-hole-case">Schwarzschild-de Sitter black hole case</a></li>
+<li><a href="#/kerr-black-hole-case" id="/toc-kerr-black-hole-case">Kerr black hole case</a></li>
 </ul>
 </nav>
 </section>
-<section id="comments-and-notations" class="slide level2 center-content">
-<h2>Comments and notations</h2>
-<ul>
-<li><p>We define, following section 3 in the main text <span class="math display">\[ u(\tau,x) \sim
-\sum_n \color{red}{{\cal A}_n(x) \;e^{i\omega_{n}\tau} } \quad ,  \quad {\cal A}_n(x) \equiv \langle\alpha_n, u_0\rangle v_n(x),\]</span> and <span class="math display">\[{\cal A}_n(\tau,x) \equiv \color{red}{{\cal A}_n(x) \;e^{i\omega_{n}\tau} }. \]</span></p></li>
-<li><p>We call “relative modal weight” the quantity <span class="math display">\[ W_n^\infty(\tau)=\frac{\left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}{\max_n \left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}\quad,\quad \color{blue}{{\cal A}_n^\infty(\tau)} \equiv {\cal A}_n(\tau,x_{\mathscr I^+}) \]</span> <!--$$ W_n^\infty(\tau)=\frac{\left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}{\max_n \left\vert\color{blue}{{\cal A}_n^\infty(\tau)} \right\vert}\quad,\quad \color{blue}{{\cal A}_n^\infty(\tau)} \equiv {\cal A}_n(\tau,x)\vert_{x=x_{\mathscr I^+}} - [You may need to refresh the page for the figure or animation to display.]{style="color: red;"}
-$$ --></p></li>
-<li><p>We start by illustrating in the following pages the Algebraically Special (AS) ‘stagnation’ in the four cases of study.</p></li>
-<li><p>The material presented here is available in the repository <a href="https://github.com/BessonJeremy/ModalWeightKeldysh/tree/main/docs" data-preview-link=""> https://github.com/BessonJeremy/ModalWeightKeldysh/tree/main/docs</a></p></li>
-</ul>
+<section>
+<section id="description-of-the-elements-presented-in-the-supplementary-material" class="title-slide slide level1 center">
+<h1>Description of the elements presented in the Supplementary material</h1>
+
 </section>
-<section id="schwarzschild-case" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Schwarzschild case</h1>
+<section id="description-of-the-elements-presented-in-the-supplementary-material-1" class="slide level2">
+<h2>Description of the elements presented in the Supplementary material <!-- {.center-content}--></h2>
+<p>We start by recalling some of the quantities that have been introduced in section 3 of the main text. The Keldysh resonant expansion can be written as <span class="math display">\[ u(\tau,x) \sim
+   \sum_n{\cal A}_n(x) \;e^{i\omega_{n}\tau}  \quad ,  \quad {\cal A}_n(x) \equiv  a_n v_n(x) = \langle\alpha_n, u_0\rangle v_n(x),
+\]</span> that we can rewrite as <span class="math display">\[
+    u(\tau,x) \sim \sum_n {\cal A}_n(\tau, x)  \quad , \quad {\cal A}_n(\tau, x) \equiv {\cal A}_n(x) \; e^{i\omega_{n}\tau} \ .
+\]</span> In the following pages we present results on the time-monitoring of two quantities:</p>
+<div style="list-style-type: lower-roman;">
+<ol type="i">
+<li>Module of the complex amplitude <span class="math inline">\({\cal A}_n(\tau, x)\)</span>: <span class="math display">\[
+|{\cal A}_n(\tau, x)| \ .
+\]</span></li>
+<li><em>Relative modal weight</em> <span class="math inline">\(W_n(\tau, x)\)</span> <span class="math display">\[
+W_n(\tau, x) \equiv \frac{|{\cal A}_n(\tau, x)|}{\max_n|{\cal A}_n(\tau, x)|} \ .
+\]</span> We focus on the values at infinity, denotes as <span class="math inline">\({\cal A}^{\infty}_n(\tau)\equiv{\cal A}_n(\tau, x_{\mathcal{I}^+})\)</span> and as <span class="math inline">\(W_n^{\infty}(\tau) =W_n(\tau, x_{\mathcal{I}^+})\)</span>.</li>
+</ol>
+</div>
+</section>
+<section id="description-of-the-elements-presented-in-the-supplementary-material-2" class="slide level2">
+<h2>Description of the elements presented in the Supplementary material</h2>
+<p>Specifically, in this Supplementary material we present, for each black hole case:</p>
+<div style="list-style-type: lower-roman;">
+<ol type="1">
+<li>An animation corresponding to the data in Fig. 2 of the main text, that is, the video presents the activation in time of the QNM and branch-cut modes, as well as the time-domain waveform to ‘correlate’ in time the activation of the frequencies with the features of the waveform. The ‘AS stagnation’ phenomenon, when present, is particularly apparent in these videos.</li>
+<li>The time evolution of the modal weight <span class="math inline">\(W_n^\infty(\tau)\)</span> corresponding to Fig. 3 in the main text.</li>
+<li>The time evolution of <span class="math inline">\(\log_{10}(|{\cal A}^{\infty}_n(\tau)|)\)</span>. The presence of a ‘secant-to-the-envelope’ is the signature of the ‘AS stagnation’ phenomenon. These plots correspond to Figs. 4, 7, 8 and 9 in the main text.</li>
+</ol>
+</div>
+<p>In the particular case of Kerr, we present an instance of initial data employed in the numerical tests.</p>
+<p>The material presented here is available in the repository <a href="https://github.com/BessonJeremy/ModalWeightKeldysh/tree/main/docs" data-preview-link=""> https://github.com/BessonJeremy/ModalWeightKeldysh/tree/main/docs</a></p>
+</section></section>
+<section id="schwarzschild-black-hole-case" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Schwarzschild black hole case</h1>
 
 </section>
 
@@ -195,26 +234,9 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-<!--
-## Comments [☆]{style="color: red;"}
-- We assess $|\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n \tau}|$ with a suitable normalisation. If $\mathcal{A}_n^{{\mathscr I}^+}$ is not numerically stable, then we are making (good looking) plots that change for each grid resolution.
-- We need call "relative modal weight" the quantity 
-$$ W_n(\tau)=\frac{\left\vert\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}\right\vert}{\max_n \left\vert\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n\tau}\right\vert},$$ 
-
-
-In order to take into account the beating between eigenvalues of opposite real part, it is natural to evaluate
-$$\sum_{\substack{\mathrm{Re}(\omega_n)\geq 0 \\ \mathrm{Im}(\omega_n)\geq 0}}\frac{\mathcal{A}_n^{{\mathscr I}^+}e^{i\omega_n\tau}+c.c.}{2}$$
-
-
-We will consider
-$$ W_n^{c.c.}(\tau)=\frac{\left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert}{\max_n \left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert},$$ 
-
-$$ W_n^{c.c.,n.r.}(\tau)=\left\vert\frac{\mathcal{A}_n^{{\mathscr I}^+} e^{i\omega_n\tau}+c.c.}{2}\right\vert,$$ 
-
--->
 </section>
-<section id="schwarzschild-zerilli-animation" class="slide level2">
-<h2>Schwarzschild-Zerilli animation</h2>
+<section id="schwarzschild-zerilli-animation-without-zoom-on-the-waveform" class="slide level2">
+<h2>Schwarzschild-Zerilli animation (without zoom on the waveform)</h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_usual_gaussian_and_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -229,12 +251,11 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-<p>Resolution grid: <span class="math inline">\(N=600\)</span></p>
 </section>
-<section id="schwarzschild-regge-wheeler-animation" class="slide level2">
-<h2>Schwarzschild-Regge-Wheeler animation</h2>
+<section id="schwarzschild-regge-wheeler-animation-without-zoom-on-the-waveform" class="slide level2">
+<h2>Schwarzschild-Regge-Wheeler animation (without zoom on the waveform)</h2>
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_N=500_case=Schwarzschild_ell=2_precision=700_s=2_RW_foreground.mp4" type="video/mp4"> </video></p>
+<p><video controls="" width="100%"> <source src="activation_N=600_case=Schwarzschild_ell=2_precision=800_s=2_RW.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
@@ -247,37 +268,30 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-<p>Resolution grid: <span class="math inline">\(N=500\)</span></p>
 </section>
-<section id="zerilli-w_ninftytau" class="slide level2">
-<h2>Zerilli: <span class="math inline">\(W_n^\infty(\tau)\)</span></h2>
+<section id="schwarzschild-zerilli-w_ninftytau" class="slide level2">
+<h2>Schwarzschild-Zerilli <span class="math inline">\(W_n^\infty(\tau)\)</span></h2>
 
-<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption"><span class="math inline">\(W_n^\infty(\tau)\)</span> in the Zerilli case</p></section>
-<section id="regge-wheeler-w_ninftytau" class="slide level2">
-<h2>Regge-Wheeler: <span class="math inline">\(W_n^\infty(\tau)\)</span></h2>
+<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_square_peaks.svg" class="r-stretch"></section>
+<section id="schwarzschild-regge-wheeler-w_ninftytau" class="slide level2">
+<h2>Schwarzschild-Regge-Wheeler <span class="math inline">\(W_n^\infty(\tau)\)</span></h2>
 
-<img data-src="N=600_case=Schwarzschild_ell=2_precision=800_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption"><span class="math inline">\(W_n^\infty(\tau)\)</span> in the RW case</p></section>
-<section id="zerilli-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
-<h2>Zerilli: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
+<img data-src="N=600_case=Schwarzschild_ell=2_precision=800_s=2_square_peaks.svg" class="r-stretch"></section>
+<section id="schwarzschild-zerilli-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
+<h2>Schwarzschild-Zerilli <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
 
-<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping in the Zerilli case</p></section>
-<section id="regge-wheeler-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
-<h2>Regge-Wheeler: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
+<img data-src="N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
+<section id="schwarzschild-regge-wheeler-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
+<h2>Schwarzschild-Regge-Wheeler <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
 
-<img data-src="N=600_case=Schwarzschild_ell=2_precision=800_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">Enveloping in the RW case</p></section>
-<section id="reissner-nordström-case" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Reissner-Nordström case</h1>
+<img data-src="N=600_case=Schwarzschild_ell=2_precision=800_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
+<section id="reissner-nordström-black-hole-case" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Reissner-Nordström black hole case</h1>
 
 </section>
 
-<!-- 
-## Isospectrality. Spectra for Chandrasekhar's $V_2^+$ and $V_2^-$ with $Q/M=0.01$
-
-![Spectra for the RN-Zerilli-like case (with $N=400$) and the RN-RW-like case (with $N=500$). $Q/M=0.01$ here; Note: If the grid resolutions ($N=400$ and $N=500$) were the same, the branch cut eigenvalues would also coincide.](eigenvalues_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_RN_RWZ.svg)
-
--->
-<section id="rn-zerilli-like-qm0.01-animation-as-stagnation" class="slide level2">
-<h2>RN-Zerilli-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
+<section id="reissner-nordström-zerilli-like-qm0.01-animation-as-stagnation" class="slide level2">
+<h2>Reissner-Nordström-Zerilli-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -293,8 +307,8 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="rn-rw-like-qm0.01-animation-no-as-stagnation" class="slide level2">
-<h2>RN-RW-like <span class="math inline">\(Q/M=0.01\)</span> animation (no ‘AS stagnation’)</h2>
+<section id="reissner-nordström-regge-wheeler-like-qm0.01-animation-no-as-stagnation" class="slide level2">
+<h2>Reissner-Nordström-Regge-Wheeler-like <span class="math inline">\(Q/M=0.01\)</span> animation (no ‘AS stagnation’)</h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.01_case=RN-RW_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -310,26 +324,26 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="rn-zerilli-like-qm0.01-animation-as-stagnation-1" class="slide level2">
-<h2>RN-Zerilli-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
+<section id="reissner-nordström-zerilli-like-qm0.01-animation-as-stagnation-1" class="slide level2">
+<h2>Reissner-Nordström-Zerilli-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
 
-<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q/M=0.01, \ell=2\)</span></p></section>
-<section id="rn-rw-like-qm0.01-animation-as-stagnation" class="slide level2">
-<h2>RN-RW-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
+<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch"></section>
+<section id="reissner-nordström-regge-wheeler-like-qm0.01-animation-no-as-stagnation-1" class="slide level2">
+<h2>Reissner-Nordström-Regge-Wheeler-like <span class="math inline">\(Q/M=0.01\)</span> animation (no ‘AS stagnation’)</h2>
 
-<img data-src="M=1_N=400_Q=0.01_case=RN-RW_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-RW <span class="math inline">\(Q/M=0.01, \ell=2\)</span></p></section>
-<section id="rn-zerilli-like-qm0.01-animation-as-stagnation-2" class="slide level2">
-<h2>RN-Zerilli-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
+<img data-src="M=1_N=400_Q=0.01_case=RN-RW_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch"></section>
+<section id="reissner-nordström-zerilli-like-qm0.01-animation-as-stagnation-2" class="slide level2">
+<h2>Reissner-Nordström-Zerilli-like <span class="math inline">\(Q/M=0.01\)</span> animation (‘AS stagnation’)</h2>
 
-<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q/M=0.01, \ell=2\)</span></p></section>
-<section id="rn-rw-like-qm0.01-animation-no-as-stagnation-1" class="slide level2">
-<h2>RN-RW-like <span class="math inline">\(Q/M=0.01\)</span> animation (no ‘AS stagnation’)</h2>
+<img data-src="M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
+<section id="reissner-nordström-regge-wheeler-like-qm0.01-animation-no-as-stagnation-2" class="slide level2">
+<h2>Reissner-Nordström-Regge-Wheeler-like <span class="math inline">\(Q/M=0.01\)</span> animation (no ‘AS stagnation’)</h2>
 
-<img data-src="M=1_N=400_Q=0.01_case=RN-RW_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-RW <span class="math inline">\(Q/M=0.01, \ell=2\)</span></p></section>
-<section id="rn-zerilli-like-qm0.1-animation-as-stagnation" class="slide level2">
-<h2>RN-Zerilli-like <span class="math inline">\(Q/M=0.1\)</span> animation (‘AS stagnation’)</h2>
+<img data-src="M=1_N=400_Q=0.01_case=RN-RW_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
+<section id="reissner-nordström-zerilli-like-qm0.1-animation-as-stagnation" class="slide level2">
+<h2>Reissner-Nordström-Zerilli-like <span class="math inline">\(Q/M=0.1\)</span> animation (‘AS stagnation’)</h2>
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_usual_gaussian_and_foreground.mp4" type="video/mp4"> </video></p>
+<p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
@@ -343,12 +357,41 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="rn-zerilli-like-w_ninftytau-with-qm0.1" class="slide level2">
-<h2>RN-Zerilli-like <span class="math inline">\(W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
+<section id="reissner-nordström-regge-wheeler-like-qm0.1-animation-no-as-stagnation" class="slide level2">
+<h2>Reissner-Nordström-Regge-Wheeler-like <span class="math inline">\(Q/M=0.1\)</span> animation (no ‘AS stagnation’)</h2>
+<div class="frame-player">
+<p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.1_case=RN-RW_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
+</div>
+<script>
+const fps = 30;
 
-<img data-src="M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q=0.1, \ell=2\)</span></p></section>
-<section id="rn-zerilli-like-qmsqrt74-animation-as-stagnation" class="slide level2">
-<h2>RN-Zerilli-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (‘AS stagnation’)</h2>
+function step(button, dir) {
+    const container = button.closest(".frame-player");
+    const video = container.querySelector("video");
+    video.pause();
+    video.currentTime += dir / fps;
+}
+</script>
+</section>
+<section id="reissner-nordström-zerilli-like-w_ninftytau-with-qm0.1" class="slide level2">
+<h2>Reissner-Nordström-Zerilli-like <span class="math inline">\(W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
+
+<img data-src="M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch"></section>
+<section id="reissner-nordström-regge-wheeler-like-w_ninftytau-with-qm0.1" class="slide level2">
+<h2>Reissner-Nordström-Regge-Wheeler-like <span class="math inline">\(W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
+
+<img data-src="M=1_N=400_Q=0.1_case=RN-RW_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch"></section>
+<section id="reissner-nordström-zerilli-like-w_ninftytau-with-qm0.1-1" class="slide level2">
+<h2>Reissner-Nordström-Zerilli-like <span class="math inline">\(W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
+
+<img data-src="M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
+<section id="reissner-nordström-regge-wheeler-like-w_ninftytau-with-qm0.1-1" class="slide level2">
+<h2>Reissner-Nordström-Regge-Wheeler-like <span class="math inline">\(W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=0.1\)</span></h2>
+
+<img data-src="M=1_N=400_Q=0.1_case=RN-RW_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
+<section id="reissner-nordström-zerilli-like-qmsqrt74-animation-as-stagnation" class="slide level2">
+<h2>Reissner-Nordström-Zerilli-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (‘AS stagnation’)</h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.6614378277661477_case=RN-Zerilli_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -364,8 +407,8 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="rn-rw-like-qmsqrt74-animation-no-as-stagnation" class="slide level2">
-<h2>RN-RW-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (no ‘AS stagnation’)</h2>
+<section id="reissner-nordström-regge-wheeler-like-qmsqrt74-animation-no-as-stagnation" class="slide level2">
+<h2>Reissner-Nordström-Regge-Wheeler-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (no ‘AS stagnation’)</h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_M=1_N=400_Q=0.6614378277661477_case=RN-RW_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -380,71 +423,30 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-<!-- Now we have a QNM instead of a purely imaginary eigenvalue.  -->
 </section>
-<section id="rn-zerilli-like-qmsqrt74-animation-as-stagnation-1" class="slide level2">
-<h2>RN-Zerilli-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (‘AS stagnation’)</h2>
+<section id="reissner-nordström-zerilli-like-w_ninftytau-with-qmsqrt74" class="slide level2">
+<h2>Reissner-Nordström-Zerilli-like <span class="math inline">\(W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=\sqrt{7}/4\)</span></h2>
 
-<img data-src="M=1_N=400_Q=0.6614378277661477_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(Q/M=\sqrt{7}/4, \ell=2\)</span></p></section>
-<section id="rn-rw-like-qmsqrt74-animation-no-as-stagnation-1" class="slide level2">
-<h2>RN-RW-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (no ‘AS stagnation’)</h2>
+<img data-src="M=1_N=400_Q=0.6614378277661477_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch"></section>
+<section id="reissner-nordström-regge-wheeler-like-w_ninftytau-with-qmsqrt74" class="slide level2">
+<h2>Reissner-Nordström-Regge-Wheeler-like <span class="math inline">\(W_n^\infty(\tau)\)</span> with <span class="math inline">\(Q/M=\sqrt{7}/4\)</span></h2>
 
-<!-- 
+<img data-src="M=1_N=400_Q=0.6614378277661477_case=RN-RW_ell=2_precision=500_s=2_square_peaks.svg" class="r-stretch"></section>
+<section id="reissner-nordström-zerilli-like-qmsqrt74-animation-as-stagnation-1" class="slide level2">
+<h2>Reissner-Nordström-Zerilli-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (‘AS stagnation’)</h2>
 
-## RN-Zerilli-like $\log_\mathrm{10}W_n^\infty(\tau)$ with $Q/M=0.1$
+<img data-src="M=1_N=400_Q=0.6614378277661477_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
+<section id="reissner-nordström-regge-wheeler-like-qmsqrt74-animation-no-as-stagnation-1" class="slide level2">
+<h2>Reissner-Nordström-Regge-Wheeler-like <span class="math inline">\(Q/M=\sqrt{7}/4\)</span> animation (no ‘AS stagnation’)</h2>
 
-![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_square_peaks_log_.svg)
-
-## RN-Zerilli-like $\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert$ with $Q/M=0.1$
-
-![RN-Zerilli $Q=0.1, \ell=2$](M=1_N=400_Q=0.1_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping_log_.svg)
-
-
-
-
-## RN-RW-like: $W_n^\infty(\tau)$ with beating (c.c.)
-
-![RN](M=1_N=500_Q=0.01_case=RN_ell=2_precision=700_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_17_curves_full__.svg)
-
-
-## Figures: RN-Zerilli $Q=0.01$ squared peaks
-
-![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc.svg)
-
-## Figures: RN-Zerilli $Q=0.01$ squared peaks log
-
-![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_cc_log.svg)
-
-
-## Figures: RN-Zerilli $Q=0.01$ enveloping
-
-![RN-Zerilli](M=1_N=400_Q=0.01_case=RN-Zerilli_ell=2_precision=500_s=2_enveloping.svg)
- -->
-<img data-src="M=1_N=400_Q=0.6614378277661477_case=RN-RW_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-RW <span class="math inline">\(Q/M=\sqrt{7}/4, \ell=2\)</span></p></section>
-<section id="schwarzschild-de-sitter-case" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Schwarzschild-de Sitter case</h1>
+<img data-src="M=1_N=400_Q=0.6614378277661477_case=RN-RW_ell=2_precision=500_s=2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
+<section id="schwarzschild-de-sitter-black-hole-case" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Schwarzschild-de Sitter black hole case</h1>
 
 </section>
 
-<section id="sds-zerilli-like-lambda-m20.07-animation-no-as-stagnation" class="slide level2">
-<h2>SdS-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span> animation (no ‘AS stagnation’)</h2>
-<div class="frame-player">
-<p><video controls="" width="100%"> <source src="activation_Lambda=0.07_M=1_N=400_case=SdS-RW-CORRECTED_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
-</div>
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-</section>
-<section id="sds-zerilli-like-lambda-m20.07-animation-no-as-stagnation-1" class="slide level2">
-<h2>SdS-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span> animation (no ‘AS stagnation’)</h2>
+<section id="schwarzschild-de-sitter-zerilli-like-lambda-m20.07-animation-no-as-stagnation" class="slide level2">
+<h2>Schwarzschild-de-Sitter-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span> animation (no ‘AS stagnation’)</h2>
 <div class="frame-player">
 <p><video controls="" width="100%"> <source src="activation_Lambda=0.07_M=1_N=400_case=SdS-Zerilli-CORRECTED_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -460,95 +462,12 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="sds-rw-like-lambda-m20.07-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
-<h2>SdS-RW-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
-
-<img data-src="Lambda=0.07_M=1_N=400_case=SdS-RW-CORRECTED_ell=2_precision=500_s=2_enveloping_log_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(\Lambda=0.07\)</span>, <span class="math inline">\(N=400\)</span></p></section>
-<section id="sds-zerilli-like-lambda-m20.07-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
-<h2>SdS-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
-
-<!-- ## Zerilli: 'usual' (hyperboloidal) gaussian
-
-![Initial data.](usual_gaussian.svg) 
-
-
-## Zerilli: 'usual' (hyperboloidal) gaussian ($N=400$)
-
-![Relative modal weight as a function of time. 12 modes, grid size $N=400$.](N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg)
-
-## Zerilli: 'usual' (hyperboloidal) gaussian ($N=400$)
-
-![Relative modal weight as a function of time. 15 modes, grid size $N=400$.](N=400_case=Schwarzschild-Zerilli_ell=2_precision=500_s=2_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
-
-
-## Zerilli: 'usual' (hyperboloidal) gaussian ($N=500$)
-
-![Relative modal weight as a function of time. 15 modes, grid size $N=500$.](N=500_case=Schwarzschild-Zerilli_ell=2_precision=700_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg)
-
-## Zerilli: 'usual' (hyperboloidal) gaussian ($N=500$)
-
-![Relative modal weight as a function of time. 15 modes, grid size $N=500$.](N=500_case=Schwarzschild-Zerilli_ell=2_precision=700_s=2_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
-
-
-## Zerilli: 'usual' (hyperboloidal) gaussian ($N=600$)
-
-![Relative modal weight as a function of time. 12 modes, grid size $N=600$.](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_relative_weight_function_Zerilli_usual_gaussian_12_curves_full.svg)
-
-## Zerilli: 'usual' (hyperboloidal) gaussian ($N=600$) [☆]{style="color: red;"} 
-
-![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added.]{style="color: red;"} ](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_classic_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
-
-
-## Zerilli: 'usual' (hyperboloidal) gaussian ($N=600$) [☆]{style="color: red;"} 
-
-![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
-
-
-## Zerilli: 'usual' (hyperboloidal) gaussian ($N=600$) [☆]{style="color: red;"} 
-
-![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added. Not normalised.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_not_normalised__relative_weight_function_Zerilli_usual_gaussian_15_curves_full.svg)
-
-
-## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
-
-![Second initial data: gaussian No. 2](gaussian_0.2.svg)
-
-
-## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
-
-![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_classic_relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg)
-
-
-## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
-
-![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_cos_relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg)
-
-
-
-## Zerilli: gaussian No. 2 [☆]{style="color: red;"} 
-
-![Relative modal weight as a function of time. 15 modes, grid size $N=600$. [Branch cut eigenvalues added. Beating between opposite real parts added. Not normalised.]{style="color: red;"}](N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_not_normalised__relative_weight_function_Zerilli_usual_gaussian_15_curves_full__.svg)
-
-
-
-
-## Zerilli: Vishu's initial data $a=0.1$
-- $u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t$
-
-![Initial data $a=0.1$](vishu_a=0.1.svg)
-
-## Zerilli: Vishu's initial data $a=0.1$
-- $u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t$
-
+<section id="schwarzschild-de-sitter-regge-wheeler-like-lambda-m20.07-animation-no-as-stagnation" class="slide level2">
+<h2>Schwarzschild-de-Sitter-Regge-Wheeler-like <span class="math inline">\(\Lambda M^2=0.07\)</span> animation (no ‘AS stagnation’)</h2>
 <div class="frame-player">
-  <video controls width="100%">
-    <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_Vishu_a=0.1.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
+<p><video controls="" width="100%"> <source src="activation_Lambda=0.07_M=1_N=400_case=SdS-RW-CORRECTED_ell=2_precision=500_s=2_foreground.mp4" type="video/mp4"> </video></p>
+<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
-
 <script>
 const fps = 30;
 
@@ -559,76 +478,31 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
+</section>
+<section id="schwarzschild-de-sitter-zerilli-like-lambda-m20.07-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
+<h2>Schwarzschild-de-Sitter-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
 
-## Zerilli: Vishu's initial data $a=1$ [☆]{style="color: red;"} 
-- $u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t$
+<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli-CORRECTED_ell=2_precision=500_s=2_.svg" class="r-stretch"></section>
+<section id="schwarzschild-de-sitter-regge-wheeler-like-lambda-m20.07-log_mathrm10vertmathcala_ninftytauvert" class="slide level2">
+<h2>Schwarzschild-de-Sitter-Regge-Wheeler-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
 
-![Initial data $a=1$](vishu_a=1.svg)
+<img data-src="Lambda=0.07_M=1_N=400_case=SdS-RW-CORRECTED_ell=2_precision=500_s=2.svg" class="r-stretch"></section>
+<section id="schwarzschild-de-sitter-zerilli-like-lambda-m20.07-log_mathrm10vertmathcala_ninftytauvert-1" class="slide level2">
+<h2>Schwarzschild-de-Sitter-Zerilli-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
 
-## Zerilli: Vishu's initial data $a=1$ [☆]{style="color: red;"} 
-- $u_0=(e^{- a (2g(\sigma))^2},-4a g(\sigma) e^{- a (2g(\sigma))^2})^t$
+<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli-CORRECTED_ell=2_precision=500_s=2_enveloping_log_many.svg" class="r-stretch"></section>
+<section id="schwarzschild-de-sitter-regge-wheeler-like-lambda-m20.07-log_mathrm10vertmathcala_ninftytauvert-1" class="slide level2">
+<h2>Schwarzschild-de-Sitter-Regge-Wheeler-like <span class="math inline">\(\Lambda M^2=0.07\)</span>: <span class="math inline">\(\log_\mathrm{10}\vert\mathcal{A}_n^\infty(\tau)\vert\)</span></h2>
 
-<div class="frame-player">
-  <video controls width="100%">
-    <source src="activation_N=600_case=Schwarzschild-Zerilli_ell=2_precision=800_s=2_vishu_a=1.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-
-
-
-## Zerilli: $\ell=3$
-- A mode sits at $\omega=40i$, its eigenfunction is very similar to the $\ell=2$ AS mode (it cancels at the horizon).
-- Convergence test ? Difficult because the mode sits very high in the complex plane.
-
-<div class="frame-player">
-  <video controls width="100%">
-    <source src="activation_N=500_case=Schwarzschild-Zerilli_ell=3_precision=700_s=2_narrow_gaussian.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-
-
-
-## Regge-Wheeler
-
-...
--->
-<img data-src="Lambda=0.07_M=1_N=400_case=SdS-Zerilli-CORRECTED_ell=2_precision=500_s=2_enveloping_log_many.svg" class="r-stretch quarto-figure-center"><p class="caption">RN-Zerilli <span class="math inline">\(\Lambda=0.07\)</span>, <span class="math inline">\(N=400\)</span></p></section>
-<section id="kerr-case" class="title-slide slide level1 center" style="font-size: 150%;">
-<h1>Kerr case</h1>
+<img data-src="Lambda=0.07_M=1_N=400_case=SdS-RW-CORRECTED_ell=2_precision=500_s=2_enveloping_log_many.svg" class="r-stretch"></section>
+<section id="kerr-black-hole-case" class="title-slide slide level1 center" style="font-size: 150%;">
+<h1>Kerr black hole case</h1>
 
 </section>
 
 <section id="kerr-initial-data-2d-gaussian" class="slide level2">
 <h2>Kerr: initial data (2D gaussian)</h2>
-<p><span class="math display">\[u_0=\left(\exp\left({-\frac{(\sigma-\mu)^2+x^2}{2\mu^2}}\right),0\right)^t, \text{ 2D gaussian}\]</span></p>
+<p><span class="math display">\[u_0(\sigma,x)=\left(\exp\left({-\frac{(\sigma-\mu)^2+x^2}{2\mu^2}}\right),0\right)^t\]</span></p>
 <div class="frame-player">
 <p><video controls="" width="90%"> <source src="rotating_surface_2D.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
@@ -662,42 +536,6 @@ function step(button, dir) {
 }
 </script>
 </section>
-<section id="kerr-s-2-amcolorred0.1-m0-and-costheta0" class="slide level2">
-<h2>Kerr <span class="math inline">\(s=-2\)</span> (<span class="math inline">\(a/M=\color{red}{0.1}\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
-<p>Presence of an ‘AS stagnation’ in the <span class="math inline">\(s=-2\)</span> case.</p>
-<div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.1_m=0_centered_x_2d_gaussian_s=-2.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
-</div>
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-</section>
-<section id="kerr-s-2-amcolorred0.5-m0-and-costheta0" class="slide level2">
-<h2>Kerr <span class="math inline">\(s=-2\)</span> (<span class="math inline">\(a/M=\color{red}{0.5}\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
-<p>Absence of an ‘AS stagnation’ when <span class="math inline">\(a\)</span> is too large.</p>
-<div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.5_m=0_centered_x_2d_gaussian_s=-2.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
-</div>
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-</section>
 <section id="kerr-s2-am0.01-m0-and-costheta0" class="slide level2">
 <h2>Kerr <span class="math inline">\(s=+2\)</span> (<span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
 <p>Absence of an ‘AS stagnation’ in the <span class="math inline">\(s=+2\)</span> case.</p>
@@ -715,34 +553,28 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-<!-- ## Kerr: another possible initial data (1D gaussian)
-
-$$u_0=\left(\exp\left({-\frac{(\sigma-\mu)^2}{2\mu^2}}\right),0\right)^t, \text{ 1D gaussian}$$
-
-<div class="frame-player">
-  <video controls width="90%">
-    <source src="rotating_surface_1D.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script> -->
 </section>
-<section id="varying-theta-kerr-xcos-theta-1" class="slide level2">
-<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta =1\)</span></h2>
+<section id="kerr-s-2-am0.01-m0-and-costheta0-1" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=-2\)</span> (<span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
+
+<img data-src="kerr_a=0.01_s=-2_square_peaks.svg" class="r-stretch"></section>
+<section id="kerr-s2-am0.01-m0-and-costheta0-1" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=+2\)</span> (<span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
+
+<img data-src="kerr_a=0.01_s=+2_square_peaks.svg" class="r-stretch"></section>
+<section id="kerr-s-2-am0.01-m0-and-costheta0-2" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=-2\)</span> (<span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
+
+<img data-src="kerr_a=0.01_s=-2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
+<section id="kerr-s2-am0.01-m0-and-costheta0-2" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=+2\)</span> (<span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
+
+<img data-src="kerr_a=0.01_s=+2_enveloping_log_long_first_10_seconds_zoom_2_text2_many.svg" class="r-stretch"></section>
+<section id="kerr-s-2-amcolorred0.1-m0-and-costheta0" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=-2\)</span> (<span class="math inline">\(a/M=\color{red}{0.1}\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
+<p>Absence of an ‘AS stagnation’ in the <span class="math inline">\(s=-2\)</span> case.</p>
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_x1_2d_gaussian.mp4" type="video/mp4"> </video></p>
+<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.1_m=0_centered_x_2d_gaussian_s=-2.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
@@ -755,12 +587,12 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-<p>We have fixed the parameters <span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and we change <span class="math inline">\(\theta\)</span></p>
 </section>
-<section id="varying-theta-kerr-xcos-theta-approx-0.71" class="slide level2">
-<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta \approx 0.71\)</span></h2>
+<section id="kerr-s2-amcolorred0.1-m0-and-costheta0" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=+2\)</span> (<span class="math inline">\(a/M=\color{red}{0.1}\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
+<p>Absence of an ‘AS stagnation’ in the <span class="math inline">\(s=+2\)</span> case.</p>
 <div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_x2_2d_gaussian.mp4" type="video/mp4"> </video></p>
+<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.1_m=0_centered_x_2d_gaussian_s=+2.mp4" type="video/mp4"> </video></p>
 <p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
 </div>
 <script>
@@ -773,259 +605,24 @@ function step(button, dir) {
     video.currentTime += dir / fps;
 }
 </script>
-<p>We have fixed the parameters <span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and we change <span class="math inline">\(\theta\)</span></p>
 </section>
-<section id="varying-theta-kerr-xcos-theta-0" class="slide level2">
-<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta = 0\)</span></h2>
-<div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_x3_2d_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
-</div>
-<script>
-const fps = 30;
+<section id="kerr-s-2-amcolorred0.1-m0-and-costheta0-1" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=-2\)</span> (<span class="math inline">\(a/M=\color{red}{0.1}\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
 
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-<p>We have fixed the parameters <span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and we change <span class="math inline">\(\theta\)</span></p>
-</section>
-<section id="varying-theta-kerr-xcos-theta-0-1" class="slide level2">
-<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta = 0\)</span></h2>
+<img data-src="kerr_a=0.1_s=-2_square_peaks.svg" class="r-stretch"></section>
+<section id="kerr-s2-amcolorred0.1-m0-and-costheta0-1" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=+2\)</span> (<span class="math inline">\(a/M=\color{red}{0.1}\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
 
-<img data-src="Kerr_a=0.01_relative_weight_function_2d_gaussian_100_curves_full.svg" class="r-stretch quarto-figure-center"><p class="caption">Relative modal weight as a function of time. 100 modes (the ordering is quite complicated), grid size <span class="math inline">\(N_\sigma=140, N_x=4\)</span>.</p></section>
-<section id="varying-theta-kerr-xcos-theta-approx--0.71" class="slide level2">
-<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta \approx -0.71\)</span></h2>
-<div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_x4_2d_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
-</div>
-<script>
-const fps = 30;
+<img data-src="kerr_a=0.1_s=+2_square_peaks.svg" class="r-stretch"></section>
+<section id="kerr-s-2-amcolorred0.1-m0-and-costheta0-2" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=-2\)</span> (<span class="math inline">\(a/M=\color{red}{0.1}\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
 
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-<p>We have fixed the parameters <span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and we change <span class="math inline">\(\theta\)</span></p>
-</section>
-<section id="varying-theta-kerr-xcos-theta--1" class="slide level2">
-<h2>Varying <span class="math inline">\(\theta\)</span>: Kerr <span class="math inline">\(x=\cos \theta = -1\)</span></h2>
-<div class="frame-player">
-<p><video controls="" width="100%"> <source src="test_Kerr_activation_modes_a=0.01_m=0_x5_2d_gaussian.mp4" type="video/mp4"> </video></p>
-<p><button onclick="step(this,-1)">back ◀</button> <button onclick="step(this,1)">forward ▶</button></p>
-</div>
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-<p>We have fixed the parameters <span class="math inline">\(a/M=0.01\)</span>, <span class="math inline">\(m=0\)</span> and we change <span class="math inline">\(\theta\)</span></p>
-<!-- 
-## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 1$
-
-<div class="frame-player">
-  <video controls width="100%">
-    <source src="test_Kerr_activation_modes_a=0_m=0_x1_2d_gaussian.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
+<img data-src="kerr_a=0.1_s=-2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
+<section id="kerr-s2-amcolorred0.1-m0-and-costheta0-2" class="slide level2">
+<h2>Kerr <span class="math inline">\(s=+2\)</span> (<span class="math inline">\(a/M=\color{red}{0.1}\)</span>, <span class="math inline">\(m=0\)</span> and <span class="math inline">\(\cos\theta=0\)</span>)</h2>
 
 
-
-## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta \approx 0.71$
-
-
-<div class="frame-player">
-  <video controls width="100%">
-    <source src="test_Kerr_activation_modes_a=0_m=0_x2_2d_gaussian.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-
-Typo in this animation: $a=0$, not $0.01$
-
-
-## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 0$
-
-<div class="frame-player">
-  <video controls width="100%">
-    <source src="test_Kerr_activation_modes_a=0_m=0_x3_2d_gaussian.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-
-
-## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta \approx -0.71$
-
-<div class="frame-player">
-  <video controls width="100%">
-    <source src="test_Kerr_activation_modes_a=0_m=0_x4_2d_gaussian.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-
-
-## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = -1$
-
-<div class="frame-player">
-  <video controls width="100%">
-    <source src="test_Kerr_activation_modes_a=0_m=0_x5_2d_gaussian.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-
-
-
-## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 1$ (1D gaussian)
-
-<div class="frame-player">
-  <video controls width="100%">
-    <source src="test_Kerr_activation_modes_a=0_m=0_x1_gaussian.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-
-
-
-## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta \approx 0.71$ (1D gaussian)
-
-
-<div class="frame-player">
-  <video controls width="100%">
-    <source src="test_Kerr_activation_modes_a=0_m=0_x2_gaussian.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script>
-
-Typo in this animation: $a=0$, not $0.01$
-
-
-## Kerr: Schwarzschild's $a=0$ limit, $x=\cos \theta = 0$ (1D gaussian)
-
-<div class="frame-player">
-  <video controls width="100%">
-    <source src="test_Kerr_activation_modes_a=0_m=0_x3_gaussian.mp4" type="video/mp4">
-  </video>
-
-  <button onclick="step(this,-1)">back ◀</button>
-  <button onclick="step(this,1)">forward ▶</button>
-</div>
-
-<script>
-const fps = 30;
-
-function step(button, dir) {
-    const container = button.closest(".frame-player");
-    const video = container.querySelector("video");
-    video.pause();
-    video.currentTime += dir / fps;
-}
-</script> -->
-
-</section>
+<img data-src="kerr_a=0.1_s=+2_enveloping_log_long_first_10_seconds_zoom_2.svg" class="r-stretch"></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
 <div class="footer footer-default">
